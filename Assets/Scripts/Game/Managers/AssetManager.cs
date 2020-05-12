@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Game.HighwaySystem.Base;
 using UnityEngine;
@@ -16,9 +17,9 @@ namespace Game.Managers
             _highwayBases = Resources.LoadAll<HighwayBase>(HIGHWAY_PATH).ToList();
         }
 
-        public HighwayBase GetHighWayByType(HighwayType highwayType)
+        public HighwayBase GetHighWayByType(Type highwayType)
         {
-            return _highwayBases?.FirstOrDefault(x => x.HighwayType == highwayType);
+            return _highwayBases?.FirstOrDefault(x => x.GetType() == highwayType);
         }
     }
 }

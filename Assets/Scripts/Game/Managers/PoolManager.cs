@@ -18,12 +18,12 @@ namespace Game.Managers
             _highwayBases = GetComponentsInChildren<HighwayBase>(true)?.ToList() ?? new List<HighwayBase>();
         }
 
-        public HighwayBase GetAvailableHighWay(HighwayType highwayType)
+        public T GetAvailableHighWay<T>() where T : HighwayBase
         {
-            var highway = _highwayBases?.FirstOrDefault(x => x.HighwayType == highwayType && !x.IsActive);
+            T highway = _highwayBases?.FirstOrDefault(x => x.GetType() == typeof(T) && !x.IsActive) as T;
             if (highway == null)
             {
-                highway = _assetManager.GetHighWayByType(highwayType);
+                highway = _assetManager.GetHighWayByType(typeof(T)) as T;
                 highway = Instantiate(highway, transform);
                 highway.Initialize();
                 _highwayBases?.Add(highway);
@@ -32,9 +32,9 @@ namespace Game.Managers
             return highway;
         }
 
-        public HighwayBase GetAvailableHighWay(HighwayType highwayType, Vector3 position)
+        public T GetAvailableHighWay<T>(Vector3 position) where T:HighwayBase
         {
-            var highWay = GetAvailableHighWay(highwayType);
+            var highWay = GetAvailableHighWay<T>();
             highWay.transform.position = position;
             return highWay;
         }

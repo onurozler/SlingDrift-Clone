@@ -7,8 +7,6 @@ namespace Game.HighwaySystem.Base
         public bool IsActive;
         public Transform FinishPoint { get; protected set; }
         public Transform FirstPoint { get; protected set; }
-        
-        public abstract HighwayType HighwayType { get; }
 
         public virtual void Initialize()
         {
@@ -29,12 +27,5 @@ namespace Game.HighwaySystem.Base
             gameObject.SetActive(false);
         }
     }
-
-    public enum HighwayType
-    {
-        STRAIGHT,
-        CORNER,
-        U_CORNER,
-        FINAL
-    }
+    
 }

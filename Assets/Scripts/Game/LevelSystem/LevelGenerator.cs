@@ -14,22 +14,23 @@ namespace Game.LevelSystem
         private void OnInstaller(PoolManager poolManager)
         {
             _poolManager = poolManager;
-           // GenerateLevels();
+             GenerateLevels();
         }
 
         private void GenerateLevels()
         {
-            var straightHighway = _poolManager.GetAvailableHighWay(HighwayType.STRAIGHT) as StraightHighway;
+            var straightHighway = _poolManager.GetAvailableHighWay<StraightHighway>();
+            _poolManager.GetAvailableHighWay<CornerHighway>();
             var lastPos = straightHighway.FinishPoint;
             for (int i = 0; i < 5; i++)
             {
-                AddCorner(straightHighway.Direction);
+                //AddCorner(straightHighway.Direction);
             }
         }
 
         private void AddCorner(StraightDirection direction)
         {
-            var corner = _poolManager.GetAvailableHighWay(HighwayType.CORNER) as CornerHighway;
+          //  var corner = _poolManager.GetAvailableHighWay(HighwayType.CORNER) as CornerHighway;
             
         }
     }
