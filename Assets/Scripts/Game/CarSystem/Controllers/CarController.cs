@@ -19,7 +19,7 @@ namespace Game.CarSystem.Controllers
         {
             _slingManager = slingManager;
             
-            _carAnimation = transform.DOShakeRotation(0.2f,transform.up * 5f).SetLoops(-1);
+            //_carAnimation = transform.DOShakeRotation(0.2f,transform.up * 5f).SetLoops(-1);
         }
         
         public void Initialize()
@@ -47,17 +47,18 @@ namespace Game.CarSystem.Controllers
             {
                 if (Vector3.Distance(closestSling.transform.position,transform.position) < 25f)
                 {
-                    _carAnimation.Pause();
+                    //_carAnimation.Pause();
                     closestSling.AddLine(transform);
-                    transform.RotateAround(closestSling.transform.position,Vector3.up, Time.deltaTime * 120f);
+                    transform.RotateAround(closestSling.transform.position,closestSling.transform.up * closestSling.GetDirection(), 
+                        Time.deltaTime * closestSling.GetAxis());
                 }
             }
             else
             {
                 closestSling.ResetLine();
                 
-                if(!_carAnimation.IsPlaying())
-                    _carAnimation.Play();
+               // if(!_carAnimation.IsPlaying())
+                    //_carAnimation.Play();
             }
 
         }

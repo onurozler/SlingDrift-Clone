@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Game.SlingSystem.Base;
+using UnityEngine;
 
 namespace Game.HighwaySystem.Base
 {
@@ -18,6 +19,11 @@ namespace Game.HighwaySystem.Base
         public virtual void Initialize()
         {
             Deactivate();
+            var sling = GetComponentInChildren<SlingTowerBase>();
+            if (sling != null)
+            {
+                sling.Initialize(this);
+            }
         }
 
         public abstract void SetDirection(HighwayDirection direction);

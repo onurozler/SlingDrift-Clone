@@ -307,6 +307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 727555823}
   - component: {fileID: 727555822}
+  - component: {fileID: 727555824}
   m_Layer: 0
   m_Name: CarBase
   m_TagString: Untagged
@@ -327,7 +328,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _carCamera: {fileID: 0}
-  IsActive: 0
 --- !u!4 &727555823
 Transform:
   m_ObjectHideFlags: 0
@@ -343,6 +343,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &727555824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727555821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc1e9ecc20422ed4d8822c88106d2895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsActive: 0
 --- !u!1 &845216046
 GameObject:
   m_ObjectHideFlags: 0

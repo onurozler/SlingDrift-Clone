@@ -3,13 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="08e7c058-d85c-484c-ba55-bf07afb3f757" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SlingDrive/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SlingDrive/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/HighwayPrefabs/CornerHighway.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/HighwayPrefabs/CornerHighway.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/HighwayPrefabs/UCorner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/HighwayPrefabs/UCorner.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Base/CarBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Base/CarBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/HighwayTypes/CornerHighway.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/HighwayTypes/CornerHighway.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/Base/HighwayBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/Base/HighwayBase.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/SlingSystem/Base/SlingTowerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/SlingSystem/Base/SlingTowerBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Helpers/Utils/OnurExtensionMethods.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Helpers/Utils/OnurExtensionMethods.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +44,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/SlingSystem/Controllers/SlingCarController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/Managers/AssetManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/HighwayTypes/StraightHighway.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/Base/HighwayBase.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/HighwayTypes/UCornerHighway.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/LevelEvents/LevelEvent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/LevelEvents/LevelEventBus.cs" />
@@ -65,9 +60,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/SlingSystem/Managers/SlingManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/HighwayTypes/CornerHighway.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Helpers/Utils/OnurExtensionMethods.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SlingSystem/Base/SlingTowerBase.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Base/CarBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/Base/HighwayBase.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SlingSystem/Base/SlingTowerBase.cs" />
       </list>
     </option>
   </component>
@@ -127,7 +123,7 @@
       <workItem from="1589199802394" duration="12970000" />
       <workItem from="1589225895344" duration="1443000" />
       <workItem from="1589273920638" duration="27924000" />
-      <workItem from="1589306623243" duration="4576000" />
+      <workItem from="1589306623243" duration="6012000" />
     </task>
     <servers />
   </component>
