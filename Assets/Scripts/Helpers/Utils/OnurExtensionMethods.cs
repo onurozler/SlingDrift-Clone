@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Utils
 {
@@ -32,6 +33,23 @@ namespace Utils
             return listToClone.Select(item => (T)item.Clone()).ToList();  
         }
 
+        public static T GetRandomElementFromList<T>(this List<T> list)
+        {
+            int random = Random.Range(0, list.Count);
+            return list[random];
+        }
+        
+        public static T GetRandomElementFromList<T>(this List<T> list, T exclude)
+        {
+            int random = Random.Range(0, list.Count);
+            while (Equals(list[random], exclude))
+            {
+                random = Random.Range(0, list.Count);
+            }
+
+            return list[random];
+        }
+        
         public static List<Transform> GetAllChilds(this Transform thisTransform)
         {
             return thisTransform.Cast<Transform>().ToList();
