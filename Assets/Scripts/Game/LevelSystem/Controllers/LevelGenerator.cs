@@ -2,22 +2,28 @@
 using Config;
 using Game.HighwaySystem.Base;
 using Game.HighwaySystem.HighwayTypes;
+using Game.LevelSystem.Managers;
 using Game.Managers;
 using UnityEngine;
 using Utils;
 using Zenject;
 
-namespace Game.LevelSystem
+namespace Game.LevelSystem.Controllers
 {
     public class LevelGenerator : MonoBehaviour
     {
+        private static int _levelIndex;
+        
         private PoolManager _poolManager;
+        private LevelManager _levelManager;
         private FinalHighway _finalHighway;
 
         [Inject]
-        private void OnInstaller(PoolManager poolManager)
+        private void OnInstaller(PoolManager poolManager,LevelManager levelManager)
         {
             _poolManager = poolManager;
+            _levelManager = levelManager;
+            _levelIndex = 0;
             _finalHighway = null;
             
              GenerateLevels(3);
@@ -82,21 +88,24 @@ namespace Game.LevelSystem
                     straightDirection = HighwayDirection.UP;
 
                 _finalHighway = GenerateHighway<FinalHighway>(straightDirection, corner, false);
+                _levelIndex++;
             }
         }
 
         private T GenerateHighway<T>(HighwayDirection cornerDirection, HighwayBase highwayBase, bool rotate = true) 
             where T:HighwayBase
         {
-            var corner = _poolManager.GetAvailableHighWay<T>();
-            corner.SetDirection(cornerDirection);
+            var highway = _poolManager.GetAvailableHighWay<T>();
+            highway.SetDirection(cornerDirection);
             if (highwayBase != null)
             {
-                corner.transform.position = highwayBase.FinishPosition;
+                highway.transform.position = highwayBase.FinishPosition;
                 if(rotate)
-                    corner.transform.Rotate(highwayBase.transform.eulerAngles.y * Vector3.up);
+                    highway.transform.Rotate(highwayBase.transform.eulerAngles.y * Vector3.up);
             }
-            return corner;
+            
+            _levelManager.AddLevel(_levelIndex,highway);
+            return highway;
         }
         
         /*

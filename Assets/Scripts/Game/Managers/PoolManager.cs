@@ -38,13 +38,5 @@ namespace Game.Managers
             highWay.transform.position = position;
             return highWay;
         }
-
-        public void DeactivateWholePool()
-        {
-            foreach (var highwayBase in _highwayBases)
-            {
-                highwayBase.Deactivate();
-            }
-        }
     }
 }

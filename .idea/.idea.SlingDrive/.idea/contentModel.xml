@@ -460,11 +460,17 @@
               </e>
             </e>
             <e p="LevelSystem" t="Include">
+              <e p="Controllers" t="Include">
+                <e p="LevelGenerator.cs" t="Include" />
+              </e>
+              <e p="LevelData.cs" t="Include" />
               <e p="LevelEvents" t="Include">
                 <e p="LevelEvent.cs" t="Include" />
                 <e p="LevelEventBus.cs" t="Include" />
               </e>
-              <e p="LevelGenerator.cs" t="Include" />
+              <e p="Managers" t="Include">
+                <e p="LevelManager.cs" t="Include" />
+              </e>
             </e>
             <e p="Managers" t="Include">
               <e p="AssetManager.cs" t="Include" />

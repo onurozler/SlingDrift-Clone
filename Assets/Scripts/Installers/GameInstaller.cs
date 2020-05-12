@@ -1,3 +1,4 @@
+using Game.LevelSystem.Managers;
 using Game.Managers;
 using UnityEngine;
 using Zenject;
@@ -11,7 +12,9 @@ namespace Installers
         public override void InstallBindings()
         {
             Container.BindInstance(_poolManager);
+            
             Container.Bind<AssetManager>().AsSingle().NonLazy();
+            Container.Bind<LevelManager>().AsSingle().NonLazy();
         }
     }
 }
