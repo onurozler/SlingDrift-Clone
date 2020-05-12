@@ -452,6 +452,7 @@
               <e p="HighwayTypes" t="Include">
                 <e p="CornerHighway.cs" t="Include" />
                 <e p="StraightHighway.cs" t="Include" />
+                <e p="UCornerHighway.cs" t="Include" />
               </e>
             </e>
             <e p="LevelSystem" t="Include">
