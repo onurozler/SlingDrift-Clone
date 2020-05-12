@@ -7,7 +7,7 @@ namespace Game.HighwaySystem.HighwayTypes
     {
         public override void SetDirection(HighwayDirection direction)
         {
-            if(direction == Direction || direction == HighwayDirection.UP)
+            if(direction == Direction)
                 return;
             
             Direction = direction;

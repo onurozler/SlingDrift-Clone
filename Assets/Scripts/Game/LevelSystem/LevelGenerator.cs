@@ -12,15 +12,19 @@ namespace Game.LevelSystem
     public class LevelGenerator : MonoBehaviour
     {
         private PoolManager _poolManager;
-        
+        private FinalHighway _finalHighway;
+
         [Inject]
         private void OnInstaller(PoolManager poolManager)
         {
             _poolManager = poolManager;
-             GenerateLevels();
+            _finalHighway = null;
+            
+             GenerateLevels(3);
+             GenerateLevels(1);
         }
 
-        private void GenerateLevels()
+        private void GenerateLevels(int levelCount)
         {
             var highwayDirections = new  List<HighwayDirection>
             {
@@ -31,37 +35,54 @@ namespace Game.LevelSystem
             var straightDirection = highwayDirections.GetRandomElementFromList();
             var cornerDirection = straightDirection;
 
-            HighwayBase straightHighway;
+            HighwayBase straightHighway = null;
             HighwayBase corner = null;
 
-            for (int i = 0; i < GameConfig.LEVEL_LENGTH; i++)
+            for (int j = 0; j < levelCount; j++)
             {
+                for (int i = 0; i < GameConfig.LEVEL_LENGTH; i++)
+                {
+                    if (straightDirection == cornerDirection)
+                        straightDirection = HighwayDirection.UP;
+
+                    if (_finalHighway == null)
+                        straightHighway = GenerateHighway<StraightHighway>(straightDirection, corner, false);
+                    else
+                        straightHighway = _finalHighway;
+
+                    if (straightDirection == HighwayDirection.UP)
+                    {
+                        cornerDirection = highwayDirections.GetRandomElementFromList(HighwayDirection.UP);
+                        corner = GenerateHighway<CornerHighway>(cornerDirection, straightHighway);
+
+                        straightDirection = cornerDirection == HighwayDirection.LEFT
+                            ? HighwayDirection.RIGHT
+                            : HighwayDirection.LEFT;
+                        straightHighway = GenerateHighway<StraightHighway>(straightDirection, corner, false);
+
+                        // Random U Corner Generation
+                        int rnd = Random.Range(0, 10);
+                        if (rnd > GameConfig.U_CORNER_PROBABILITY)
+                        {
+                            cornerDirection = straightDirection;
+                            straightDirection = cornerDirection == HighwayDirection.LEFT
+                                ? HighwayDirection.RIGHT
+                                : HighwayDirection.LEFT;
+                            corner = GenerateHighway<UCornerHighway>(cornerDirection, straightHighway, false);
+                            _finalHighway = null;
+                            continue;
+                        }
+                    }
+
+                    _finalHighway = null;
+                    cornerDirection = straightDirection;
+                    corner = GenerateHighway<CornerHighway>(cornerDirection, straightHighway);
+                }
+
                 if (straightDirection == cornerDirection)
                     straightDirection = HighwayDirection.UP;
 
-                straightHighway = GenerateHighway<StraightHighway>(straightDirection, corner,false);
-
-                if (straightDirection == HighwayDirection.UP)
-                {
-                    cornerDirection = highwayDirections.GetRandomElementFromList(HighwayDirection.UP);
-                    corner = GenerateHighway<CornerHighway>(cornerDirection, straightHighway);
-
-                    straightDirection = cornerDirection == HighwayDirection.LEFT ? HighwayDirection.RIGHT : HighwayDirection.LEFT;
-                    straightHighway = GenerateHighway<StraightHighway>(straightDirection, corner,false);
-
-                    // Random U Corner Generation
-                    int rnd = Random.Range(0, 10);
-                    if (rnd > GameConfig.U_CORNER_PROBABILITY)
-                    {
-                        cornerDirection = straightDirection;
-                        straightDirection = cornerDirection == HighwayDirection.LEFT ? HighwayDirection.RIGHT : HighwayDirection.LEFT;
-                        corner = GenerateHighway<UCornerHighway>(cornerDirection, straightHighway,false);
-                        continue;
-                    }
-                }
-
-                cornerDirection = straightDirection;
-                corner = GenerateHighway<CornerHighway>(cornerDirection,straightHighway);
+                _finalHighway = GenerateHighway<FinalHighway>(straightDirection, corner, false);
             }
         }
 
@@ -78,6 +99,20 @@ namespace Game.LevelSystem
             }
             return corner;
         }
+        
+        /*
+        private void HandleDirectionLogic(ref HighwayDirection straight, HighwayDirection corner)
+        {
+            if (straight == corner)
+            {
+                straight = HighwayDirection.UP;
+                return;
+            }
+            
+            straight = corner == HighwayDirection.LEFT
+                ? HighwayDirection.RIGHT
+                : HighwayDirection.LEFT;
+        }*/
         
     }
 }
