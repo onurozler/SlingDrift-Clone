@@ -16,10 +16,7 @@ namespace Game.LevelSystem
         private void OnInstaller(PoolManager poolManager)
         {
             _poolManager = poolManager;
-             //GenerateLevels();
-             var straightHighway = _poolManager.GetAvailableHighWay<UCornerHighway>();
-             straightHighway.SetDirection(HighwayDirection.LEFT);
-
+             GenerateLevels();
         }
 
         private void GenerateLevels()
@@ -31,31 +28,47 @@ namespace Game.LevelSystem
                 HighwayDirection.RIGHT
             };
             var straightDirection = highwayDirections.GetRandomElementFromList(HighwayDirection.UP);
-            var straightHighway = _poolManager.GetAvailableHighWay<StraightHighway>();
-            
-            straightHighway.SetDirection(straightDirection);
+            var cornerDirection = straightDirection;
+
+            HighwayBase straightHighway;
+            HighwayBase corner = null;
 
             for (int i = 0; i < 5; i++)
             {
-                var corner = _poolManager.GetAvailableHighWay<CornerHighway>();
-                corner.SetDirection(straightDirection);
-                corner.transform.position = straightHighway.FinishPosition;
-                corner.transform.Rotate(straightHighway.transform.eulerAngles.y * Vector3.up);
+                if (straightDirection == cornerDirection)
+                    straightDirection = HighwayDirection.UP;
 
-                straightDirection =
-                    straightDirection == HighwayDirection.LEFT || straightDirection == HighwayDirection.RIGHT
-                        ? HighwayDirection.UP
-                        : highwayDirections.GetRandomElementFromList(HighwayDirection.UP);
-                
-                straightHighway = _poolManager.GetAvailableHighWay<StraightHighway>();
-                straightHighway.transform.position = corner.FinishPosition;
-                straightHighway.SetDirection(straightDirection);
-                
-                corner = _poolManager.GetAvailableHighWay<CornerHighway>();
-                corner.SetDirection(straightDirection);
-                corner.transform.position = straightHighway.FinishPosition;
-                corner.transform.Rotate(straightHighway.transform.eulerAngles.y * Vector3.up);
+                straightHighway = GenerateHighway<StraightHighway>(straightDirection, corner,false);
+
+                if (straightDirection == HighwayDirection.UP)
+                {
+                    cornerDirection = highwayDirections.GetRandomElementFromList(HighwayDirection.UP);
+                    corner = GenerateHighway<CornerHighway>(cornerDirection, straightHighway);
+
+                    straightDirection = cornerDirection == HighwayDirection.LEFT
+                        ? HighwayDirection.RIGHT
+                        : HighwayDirection.LEFT;
+                    straightHighway = GenerateHighway<StraightHighway>(straightDirection, corner,false);
+                }
+
+                cornerDirection = straightDirection;
+                corner = GenerateHighway<CornerHighway>(cornerDirection,straightHighway);
             }
         }
+
+        private T GenerateHighway<T>(HighwayDirection cornerDirection, HighwayBase highwayBase, bool rotate = true) 
+            where T:HighwayBase
+        {
+            var corner = _poolManager.GetAvailableHighWay<T>();
+            corner.SetDirection(cornerDirection);
+            if (highwayBase != null)
+            {
+                corner.transform.position = highwayBase.FinishPosition;
+                if(rotate)
+                    corner.transform.Rotate(highwayBase.transform.eulerAngles.y * Vector3.up);
+            }
+            return corner;
+        }
+        
     }
 }

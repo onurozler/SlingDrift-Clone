@@ -4,7 +4,6 @@
     <list default="true" id="08e7c058-d85c-484c-ba55-bf07afb3f757" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SlingDrive/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SlingDrive/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/LevelGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/LevelGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Managers/GameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +41,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/HighwayTypes/CornerHighway.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Helpers/Utils/OnurExtensionMethods.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/Managers/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/LevelGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/HighwayTypes/UCornerHighway.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/LevelGenerator.cs" />
       </list>
     </option>
   </component>
@@ -54,6 +53,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -101,7 +101,7 @@
       <updated>1589199779255</updated>
       <workItem from="1589199802394" duration="12970000" />
       <workItem from="1589225895344" duration="1443000" />
-      <workItem from="1589273920638" duration="14233000" />
+      <workItem from="1589273920638" duration="17133000" />
     </task>
     <servers />
   </component>
