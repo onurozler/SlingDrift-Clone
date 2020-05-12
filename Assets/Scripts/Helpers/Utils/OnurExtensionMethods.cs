@@ -49,6 +49,13 @@ namespace Utils
 
             return list[random];
         }
+
+        public static void ChangeScaleY(this Transform thisTransform,float change)
+        {
+            var firstScale = thisTransform.transform.localScale;
+            firstScale.y = change;
+            thisTransform.transform.localScale = firstScale;
+        }
         
         public static List<Transform> GetAllChilds(this Transform thisTransform)
         {

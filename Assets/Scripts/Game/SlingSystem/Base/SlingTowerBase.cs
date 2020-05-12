@@ -1,6 +1,6 @@
-﻿using Game.CarSystem;
-using Game.CarSystem.Base;
+﻿using Game.CarSystem.Base;
 using UnityEngine;
+using Utils;
 
 namespace Game.SlingSystem.Base
 {
@@ -8,11 +8,17 @@ namespace Game.SlingSystem.Base
     {
         private CarBase _currentCar;
         
-        public void OnClicking(CarBase carBase)
+        public void AddLine(Transform carBase)
         {
-            carBase.transform.SetParent(transform);
-            
-            transform.Rotate(Vector3.up * Time.deltaTime * 30f);
+            var sling = transform.Find("Sling");
+            transform.LookAt(carBase);
+            sling.transform.ChangeScaleY(Vector3.Distance(sling.position,carBase.transform.position) / 4f);
+        }
+
+        public void ResetLine()
+        {
+            var sling = transform.Find("Sling");
+            sling.transform.ChangeScaleY(1f);
         }
     }
 }

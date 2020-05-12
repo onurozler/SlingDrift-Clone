@@ -244,7 +244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4706588353614811704}
   m_Layer: 0
-  m_Name: TEST
+  m_Name: Sling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
