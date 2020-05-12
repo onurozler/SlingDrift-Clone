@@ -1,4 +1,5 @@
 ﻿using Game.CarSystem;
+using Game.CarSystem.Base;
 using UnityEngine;
 
 namespace Game.SlingSystem.Base

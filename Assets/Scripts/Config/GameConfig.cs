@@ -10,6 +10,6 @@
         #endregion
 
         
-        public static float CAR_SPEED = 12f;
+        public static float CAR_SPEED = 20f;
     }
 }

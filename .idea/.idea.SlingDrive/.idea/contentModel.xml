@@ -446,7 +446,12 @@
           </e>
           <e p="Game" t="Include">
             <e p="CarSystem" t="Include">
-              <e p="CarBase.cs" t="Include" />
+              <e p="Base" t="Include">
+                <e p="CarBase.cs" t="Include" />
+              </e>
+              <e p="Controllers" t="Include">
+                <e p="CarController.cs" t="Include" />
+              </e>
             </e>
             <e p="HighwaySystem" t="Include">
               <e p="Base" t="Include">
