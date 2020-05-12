@@ -460,6 +460,10 @@
               </e>
             </e>
             <e p="LevelSystem" t="Include">
+              <e p="LevelEvents" t="Include">
+                <e p="LevelEvent.cs" t="Include" />
+                <e p="LevelEventBus.cs" t="Include" />
+              </e>
               <e p="LevelGenerator.cs" t="Include" />
             </e>
             <e p="Managers" t="Include">

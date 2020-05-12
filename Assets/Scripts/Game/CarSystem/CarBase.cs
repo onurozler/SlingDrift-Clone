@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Config;
+using UnityEngine;
 
 namespace Game.CarSystem
 {
@@ -13,7 +14,7 @@ namespace Game.CarSystem
 
         public void Move()
         {
-            transform.Translate(transform.forward * (Time.deltaTime * 8f),Space.World);
+            transform.Translate(transform.forward * (Time.deltaTime * GameConfig.CAR_SPEED),Space.World);
         }
     }
 }

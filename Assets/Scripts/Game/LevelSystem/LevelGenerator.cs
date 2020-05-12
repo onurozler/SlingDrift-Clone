@@ -21,9 +21,8 @@ namespace Game.LevelSystem
             _finalHighway = null;
             
              GenerateLevels(3);
-             GenerateLevels(1);
         }
-
+        
         private void GenerateLevels(int levelCount)
         {
             var highwayDirections = new  List<HighwayDirection>
