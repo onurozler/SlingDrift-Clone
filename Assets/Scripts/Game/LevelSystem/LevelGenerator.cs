@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Config;
 using Game.HighwaySystem.Base;
 using Game.HighwaySystem.HighwayTypes;
 using Game.Managers;
@@ -33,7 +34,7 @@ namespace Game.LevelSystem
             HighwayBase straightHighway;
             HighwayBase corner = null;
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < GameConfig.LEVEL_LENGTH; i++)
             {
                 if (straightDirection == cornerDirection)
                     straightDirection = HighwayDirection.UP;
@@ -45,10 +46,18 @@ namespace Game.LevelSystem
                     cornerDirection = highwayDirections.GetRandomElementFromList(HighwayDirection.UP);
                     corner = GenerateHighway<CornerHighway>(cornerDirection, straightHighway);
 
-                    straightDirection = cornerDirection == HighwayDirection.LEFT
-                        ? HighwayDirection.RIGHT
-                        : HighwayDirection.LEFT;
+                    straightDirection = cornerDirection == HighwayDirection.LEFT ? HighwayDirection.RIGHT : HighwayDirection.LEFT;
                     straightHighway = GenerateHighway<StraightHighway>(straightDirection, corner,false);
+
+                    // Random U Corner Generation
+                    int rnd = Random.Range(0, 10);
+                    if (rnd > 5)
+                    {
+                        cornerDirection = straightDirection;
+                        straightDirection = cornerDirection == HighwayDirection.LEFT ? HighwayDirection.RIGHT : HighwayDirection.LEFT;
+                        corner = GenerateHighway<UCornerHighway>(cornerDirection, straightHighway,false);
+                        continue;
+                    }
                 }
 
                 cornerDirection = straightDirection;
