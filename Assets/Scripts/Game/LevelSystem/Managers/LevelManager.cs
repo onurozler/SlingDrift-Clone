@@ -2,14 +2,26 @@
 using System.Linq;
 using Game.HighwaySystem.Base;
 using Game.LevelSystem.LevelEvents;
+using Game.SlingSystem.Base;
+using Game.SlingSystem.Managers;
+using Zenject;
 
 namespace Game.LevelSystem.Managers
 {
     public class LevelManager
     {
+        private SlingManager _slingManager;
+        
         private List<LevelData> _levelDatas;
         private int _deleteIndex;
 
+        
+        [Inject]
+        private void OnInstaller(SlingManager slingManager)
+        {
+            _slingManager = slingManager;
+        }
+        
         public LevelManager()
         {
             _levelDatas = new List<LevelData>();
@@ -23,6 +35,8 @@ namespace Game.LevelSystem.Managers
             var level = _levelDatas.FirstOrDefault(x => x.LevelIndex == levelIndex) ?? new LevelData(levelIndex);
             _levelDatas.Add(level);
             level.AllLevelHighways.Add(highwayBase);
+
+            level.AllLevelHighways.ForEach(x=> _slingManager.Add(x.GetComponentInChildren<SlingTowerBase>()));
         }
 
         public HighwayBase GetHighwayOfLevel(int levelIndex,int highwayIndex)

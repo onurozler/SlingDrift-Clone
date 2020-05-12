@@ -25,8 +25,6 @@ namespace Game.Managers
         {
             _levelGenerator.Initialize();
             _carBase.Initialize(_levelManager.GetHighwayOfLevel(0,0).transform);
-            
-            // _test = _slingTowerBase.transform.Find("TEST");
         }
 
         private void Update()

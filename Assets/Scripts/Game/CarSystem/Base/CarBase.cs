@@ -1,5 +1,6 @@
 ﻿using Config;
 using DG.Tweening;
+using Game.CarSystem.Controllers;
 using UnityEngine;
 
 namespace Game.CarSystem.Base
@@ -9,26 +10,19 @@ namespace Game.CarSystem.Base
         [SerializeField] 
         private Camera _carCamera;
         private Vector3 _cameraOffset;
-        public bool IsActive;
+        private CarController _carController;
 
         public void Initialize(Transform objeTransform)
         {
-            IsActive = true;
             _carCamera = _carCamera == null ? Camera.main : _carCamera;
             _cameraOffset = _carCamera.transform.position - transform.position;
             transform.position = objeTransform.position;
             transform.eulerAngles = objeTransform.eulerAngles;
             
             transform.DOShakeRotation(0.2f,Vector3.up * 5f).SetLoops(-1);
-        }
-        
-        private void Update()
-        {
-            if(!IsActive)
-                return;
-            
-            
-            Move();
+
+            _carController = GetComponent<CarController>();
+            _carController.Initialize();
         }
 
         private void LateUpdate()
@@ -36,9 +30,6 @@ namespace Game.CarSystem.Base
             _carCamera.transform.position = transform.position + _cameraOffset;
         }
 
-        private void Move()
-        {
-            transform.Translate(transform.forward * (Time.deltaTime * GameConfig.CAR_SPEED),Space.World);
-        }
+
     }
 }

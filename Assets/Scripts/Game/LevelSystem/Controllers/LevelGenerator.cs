@@ -110,20 +110,6 @@ namespace Game.LevelSystem.Controllers
             _levelManager.AddLevel(_levelIndex,highway);
             return highway;
         }
-        
-        /*
-        private void HandleDirectionLogic(ref HighwayDirection straight, HighwayDirection corner)
-        {
-            if (straight == corner)
-            {
-                straight = HighwayDirection.UP;
-                return;
-            }
-            
-            straight = corner == HighwayDirection.LEFT
-                ? HighwayDirection.RIGHT
-                : HighwayDirection.LEFT;
-        }*/
-        
+
     }
 }

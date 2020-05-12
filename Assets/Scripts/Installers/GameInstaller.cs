@@ -1,8 +1,8 @@
-using Game.CarSystem;
 using Game.CarSystem.Base;
 using Game.LevelSystem.Controllers;
 using Game.LevelSystem.Managers;
 using Game.Managers;
+using Game.SlingSystem.Managers;
 using UnityEngine;
 using Zenject;
 
@@ -22,6 +22,7 @@ namespace Installers
             
             Container.Bind<AssetManager>().AsSingle().NonLazy();
             Container.Bind<LevelManager>().AsSingle().NonLazy();
+            Container.Bind<SlingManager>().AsSingle().NonLazy();
         }
     }
 }
