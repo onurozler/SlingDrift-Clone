@@ -28,7 +28,7 @@ namespace Game.LevelSystem
                 HighwayDirection.LEFT,
                 HighwayDirection.RIGHT
             };
-            var straightDirection = highwayDirections.GetRandomElementFromList(HighwayDirection.UP);
+            var straightDirection = highwayDirections.GetRandomElementFromList();
             var cornerDirection = straightDirection;
 
             HighwayBase straightHighway;
@@ -51,7 +51,7 @@ namespace Game.LevelSystem
 
                     // Random U Corner Generation
                     int rnd = Random.Range(0, 10);
-                    if (rnd > 5)
+                    if (rnd > GameConfig.U_CORNER_PROBABILITY)
                     {
                         cornerDirection = straightDirection;
                         straightDirection = cornerDirection == HighwayDirection.LEFT ? HighwayDirection.RIGHT : HighwayDirection.LEFT;
