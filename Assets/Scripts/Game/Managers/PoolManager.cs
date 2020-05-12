@@ -32,7 +32,7 @@ namespace Game.Managers
             return highway;
         }
 
-        public T GetAvailableHighWay<T>(Vector3 position) where T:HighwayBase
+        public T GetAvailableHighWay<T>(Vector3 position) where T : HighwayBase
         {
             var highWay = GetAvailableHighWay<T>();
             highWay.transform.position = position;

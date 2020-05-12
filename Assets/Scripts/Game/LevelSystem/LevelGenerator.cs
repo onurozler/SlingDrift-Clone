@@ -2,6 +2,7 @@
 using Game.HighwaySystem.HighwayTypes;
 using Game.Managers;
 using UnityEngine;
+using Utils;
 using Zenject;
 
 namespace Game.LevelSystem
@@ -20,18 +21,14 @@ namespace Game.LevelSystem
         private void GenerateLevels()
         {
             var straightHighway = _poolManager.GetAvailableHighWay<StraightHighway>();
-            _poolManager.GetAvailableHighWay<CornerHighway>();
-            var lastPos = straightHighway.FinishPoint;
+            var corner = _poolManager.GetAvailableHighWay<CornerHighway>();
+            corner.transform.ChangePositionWithChild("FinishPosition");
+            
+            //var lastPos = straightHighway.FinishTransform;
             for (int i = 0; i < 5; i++)
             {
                 //AddCorner(straightHighway.Direction);
             }
-        }
-
-        private void AddCorner(StraightDirection direction)
-        {
-          //  var corner = _poolManager.GetAvailableHighWay(HighwayType.CORNER) as CornerHighway;
-            
         }
     }
 }

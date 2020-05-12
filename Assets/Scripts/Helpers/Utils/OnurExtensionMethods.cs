@@ -32,12 +32,24 @@ namespace Utils
             return listToClone.Select(item => (T)item.Clone()).ToList();  
         }
 
-        public static void ChangePositionY(this Transform thisPosition, float yPosition)
+        public static List<Transform> GetAllChilds(this Transform thisTransform)
         {
-            var tempPos = thisPosition.position;
-            tempPos.y = yPosition;
-
-            thisPosition.position = tempPos;
+            return thisTransform.Cast<Transform>().ToList();
+        }
+        
+        public static void ChangePositionWithChild(this Transform thisTransform, string childname)
+        {
+            var childs = thisTransform.GetAllChilds();
+            var changedChild = childs.FirstOrDefault(x => x.name == childname);
+            if(changedChild == null)
+                return;
+            
+            childs.ForEach(x=>x.SetParent(null));
+            var tempPos = changedChild.position;
+            changedChild.position = thisTransform.position;
+            thisTransform.position = tempPos;
+            
+            childs.ForEach(x=> x.SetParent(thisTransform));
         }
     }
 }

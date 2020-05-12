@@ -4,16 +4,22 @@ namespace Game.HighwaySystem.Base
 {
     public abstract class HighwayBase : MonoBehaviour
     {
-        public bool IsActive;
-        public Transform FinishPoint { get; protected set; }
-        public Transform FirstPoint { get; protected set; }
+        #region Public Properties
 
+        public bool IsActive;
+        public HighwayDirection Direction;
+
+        #endregion
+
+        
+        private Transform _finishTransform;
+        
         public virtual void Initialize()
         {
-            FirstPoint = transform;
-            FinishPoint = transform.Find("FinishPosition");
+            _finishTransform = transform.Find("FinishPosition");
             Deactivate();
         }
+        
 
         public virtual void Activate()
         {
@@ -27,5 +33,11 @@ namespace Game.HighwaySystem.Base
             gameObject.SetActive(false);
         }
     }
-    
+
+    public enum HighwayDirection
+    {
+        UP,
+        LEFT,
+        RIGHT
+    }
 }

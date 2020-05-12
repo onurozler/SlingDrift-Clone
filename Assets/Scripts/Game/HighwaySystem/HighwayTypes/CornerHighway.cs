@@ -1,14 +1,9 @@
 ﻿using Game.HighwaySystem.Base;
+using UnityEngine;
 
 namespace Game.HighwaySystem.HighwayTypes
 {
     public class CornerHighway : HighwayBase
     {
-        public CornerDirection CornerDirection;
-    }
-    public enum CornerDirection
-    {
-        RIGHT = 0,
-        LEFT = 180
     }
 }

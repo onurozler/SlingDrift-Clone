@@ -20,6 +20,8 @@ namespace Game.Managers
 
         private void Update()
         {
+            
+            return;
             _slingTowerBase.transform.LookAt(_carBase.transform);
             _test.transform.localScale = new Vector3(_test.transform.localScale.x,Vector3.Distance(_test.position,_carBase.transform.position)/4f,_test.transform.localScale.z);
             
