@@ -22,7 +22,12 @@ namespace Game.LevelSystem
         {
             var straightHighway = _poolManager.GetAvailableHighWay<StraightHighway>();
             var corner = _poolManager.GetAvailableHighWay<CornerHighway>();
-            corner.transform.ChangePositionWithChild("FinishPosition");
+            corner.SetDirection(HighwayDirection.RIGHT);
+            corner.transform.position = straightHighway.FinishPosition;
+            
+            straightHighway = _poolManager.GetAvailableHighWay<StraightHighway>();
+            straightHighway.SetDirection(HighwayDirection.UP);
+            straightHighway.transform.position = corner.FinishPosition;
             
             //var lastPos = straightHighway.FinishTransform;
             for (int i = 0; i < 5; i++)

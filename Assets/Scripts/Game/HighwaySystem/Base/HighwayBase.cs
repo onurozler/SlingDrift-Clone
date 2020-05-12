@@ -8,6 +8,7 @@ namespace Game.HighwaySystem.Base
 
         public bool IsActive;
         public HighwayDirection Direction;
+        public Vector3 FinishPosition => transform.Find("FinishPosition").position;
 
         #endregion
 
@@ -16,10 +17,10 @@ namespace Game.HighwaySystem.Base
         
         public virtual void Initialize()
         {
-            _finishTransform = transform.Find("FinishPosition");
             Deactivate();
         }
-        
+
+        public abstract void SetDirection(HighwayDirection direction);
 
         public virtual void Activate()
         {
@@ -36,8 +37,8 @@ namespace Game.HighwaySystem.Base
 
     public enum HighwayDirection
     {
-        UP,
-        LEFT,
-        RIGHT
+        UP = 90,
+        LEFT = 180,
+        RIGHT = 0
     }
 }

@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 9140122097628868449}
   m_Father: {fileID: 7306183040567630628}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5868591948229245579
 MeshFilter:
@@ -150,8 +150,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5868591948228363019}
   - {fileID: 8866091468558581091}
+  - {fileID: 5868591948228363019}
   - {fileID: 7306183039160960624}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsActive: 0
-  Direction: 2
+  Direction: 0
 --- !u!1 &8866091468558322843
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,7 +200,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7306183040567630628}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8866091468561448993
 MeshFilter:

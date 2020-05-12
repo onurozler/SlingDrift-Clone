@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsActive: 0
-  Direction: 2
+  Direction: 0
 --- !u!1 &7411424338699179122
 GameObject:
   m_ObjectHideFlags: 0

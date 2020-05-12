@@ -10,9 +10,6 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/HighwayTypes/CornerHighway.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/HighwayTypes/CornerHighway.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/HighwayTypes/StraightHighway.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/HighwayTypes/StraightHighway.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/LevelGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/LevelGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Managers/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Managers/PoolManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Managers/PoolManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Helpers/Utils/OnurExtensionMethods.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Helpers/Utils/OnurExtensionMethods.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,10 +42,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/Managers/AssetManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/Managers/PoolManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/Managers/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/HighwayTypes/CornerHighway.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/HighwayTypes/StraightHighway.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Helpers/Utils/OnurExtensionMethods.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/HighwayTypes/StraightHighway.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/Base/HighwayBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/HighwayTypes/CornerHighway.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/LevelGenerator.cs" />
       </list>
     </option>
@@ -107,7 +104,7 @@
       <updated>1589199779255</updated>
       <workItem from="1589199802394" duration="12970000" />
       <workItem from="1589225895344" duration="1443000" />
-      <workItem from="1589273920638" duration="4947000" />
+      <workItem from="1589273920638" duration="7192000" />
     </task>
     <servers />
   </component>
@@ -117,9 +114,9 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="WindowStateProjectService">
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1589276576049">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1589280679327">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589276576049" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589280679327" />
   </component>
 </project>
