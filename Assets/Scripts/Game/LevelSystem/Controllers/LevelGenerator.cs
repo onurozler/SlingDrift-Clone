@@ -25,8 +25,11 @@ namespace Game.LevelSystem.Controllers
             _levelManager = levelManager;
             _levelIndex = 0;
             _finalHighway = null;
-            
-             GenerateLevels(3);
+        }
+
+        public void Initialize()
+        {
+            GenerateLevels(3);
         }
         
         private void GenerateLevels(int levelCount)

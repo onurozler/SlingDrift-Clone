@@ -1,4 +1,5 @@
 ﻿using Game.HighwaySystem.Base;
+using Game.LevelSystem.LevelEvents;
 using UnityEngine;
 
 namespace Game.HighwaySystem.HighwayTypes
@@ -16,7 +17,8 @@ namespace Game.HighwaySystem.HighwayTypes
 
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log("Game Finished!");
+            Debug.Log("LEVEL FINISHED!");
+            LevelEventBus.InvokeEvent(LevelEventType.LEVEL_UP);
         }
     }
 }

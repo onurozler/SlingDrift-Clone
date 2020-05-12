@@ -1,21 +1,31 @@
 ﻿using Game.CarSystem;
-using Game.SlingSystem.Base;
+using Game.LevelSystem.Controllers;
+using Game.LevelSystem.Managers;
 using UnityEngine;
+using Zenject;
 
 namespace Game.Managers
 {
     public class GameManager : MonoBehaviour
     {
+        private LevelGenerator _levelGenerator;
+        private LevelManager _levelManager;
         private CarBase _carBase;
-        private SlingTowerBase _slingTowerBase;
-        private Transform _test;
+
+        [Inject]
+        private void OnInstaller(LevelManager levelManager, LevelGenerator levelGenerator, CarBase carBase)
+        {
+            _levelManager = levelManager;
+            _levelGenerator = levelGenerator;
+            _carBase = carBase;
+        }
         
         private void Awake()
         {
-            _carBase = FindObjectOfType<CarBase>();
-            _slingTowerBase = FindObjectOfType<SlingTowerBase>();
-
-           // _test = _slingTowerBase.transform.Find("TEST");
+            _levelGenerator.Initialize();
+            _carBase.Initialize(_levelManager.GetHighwayOfLevel(0,0).transform);
+            
+            // _test = _slingTowerBase.transform.Find("TEST");
         }
 
         private void Update()
@@ -27,7 +37,7 @@ namespace Game.Managers
             
             if (Input.GetMouseButton(0))
             {
-                _slingTowerBase.OnClicking(_carBase);
+               // _slingTowerBase.OnClicking(_carBase);
             }            
         }
     }

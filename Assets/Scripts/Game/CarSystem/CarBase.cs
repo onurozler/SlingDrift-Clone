@@ -7,8 +7,18 @@ namespace Game.CarSystem
     {
         public bool IsActive;
 
+        public void Initialize(Transform objeTransform)
+        {
+            IsActive = true;
+            transform.position = objeTransform.position;
+            transform.eulerAngles = objeTransform.eulerAngles;
+        }
+        
         private void Update()
         {
+            if(!IsActive)
+                return;
+            
             Move();
         }
 
