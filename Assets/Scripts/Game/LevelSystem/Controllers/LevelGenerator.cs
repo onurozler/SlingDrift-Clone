@@ -2,6 +2,7 @@
 using Config;
 using Game.HighwaySystem.Base;
 using Game.HighwaySystem.HighwayTypes;
+using Game.LevelSystem.LevelEvents;
 using Game.LevelSystem.Managers;
 using Game.Managers;
 using UnityEngine;
@@ -30,6 +31,10 @@ namespace Game.LevelSystem.Controllers
         public void Initialize()
         {
             GenerateLevels(3);
+            LevelEventBus.SubscribeEvent(LevelEventType.LEVEL_UP, () =>
+            {
+                Timer.Instance.TimerWait(5f, () => GenerateLevels(1));
+            });
         }
         
         private void GenerateLevels(int levelCount)
