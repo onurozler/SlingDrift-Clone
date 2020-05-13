@@ -450,6 +450,7 @@
                 <e p="CarBase.cs" t="Include" />
               </e>
               <e p="Controllers" t="Include">
+                <e p="CarAnimationController.cs" t="Include" />
                 <e p="CarController.cs" t="Include" />
               </e>
             </e>

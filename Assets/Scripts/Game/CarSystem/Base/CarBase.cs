@@ -8,7 +8,9 @@ namespace Game.CarSystem.Base
         [SerializeField] 
         private Camera _carCamera;
         private Vector3 _cameraOffset;
+
         private CarController _carController;
+        private CarAnimationController _carAnimationController;
         
         public void Initialize(Transform objeTransform)
         {
@@ -17,9 +19,9 @@ namespace Game.CarSystem.Base
             transform.position = objeTransform.position;
             transform.eulerAngles = objeTransform.eulerAngles;
             
-
+            _carAnimationController = new CarAnimationController(transform);
             _carController = GetComponent<CarController>();
-            _carController.Initialize();
+            _carController.Initialize(_carAnimationController);
         }
 
         private void LateUpdate()

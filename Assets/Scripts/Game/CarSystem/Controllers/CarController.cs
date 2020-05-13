@@ -1,5 +1,6 @@
 ﻿using Config;
 using DG.Tweening;
+using Game.CarSystem.Base;
 using Game.SlingSystem.Managers;
 using UnityEngine;
 using Zenject;
@@ -8,9 +9,9 @@ namespace Game.CarSystem.Controllers
 {
     public class CarController : MonoBehaviour
     {
+        private CarAnimationController _carAnimationController;
         private SlingManager _slingManager;
         private Tween _carAnimation;
-
         
         public bool IsActive;
         
@@ -18,12 +19,11 @@ namespace Game.CarSystem.Controllers
         private void OnInstaller(SlingManager slingManager)
         {
             _slingManager = slingManager;
-            
-            //_carAnimation = transform.DOShakeRotation(0.2f,transform.up * 5f).SetLoops(-1);
         }
         
-        public void Initialize()
+        public void Initialize(CarAnimationController carAnimationController)
         {
+            _carAnimationController = carAnimationController;
             IsActive = true;
         }
         private void Update()
@@ -47,18 +47,17 @@ namespace Game.CarSystem.Controllers
             {
                 if (Vector3.Distance(closestSling.transform.position,transform.position) < 25f)
                 {
-                    //_carAnimation.Pause();
+                    _carAnimationController.Pause();
                     closestSling.AddLine(transform);
                     transform.RotateAround(closestSling.transform.position,closestSling.transform.up * closestSling.GetDirection(), 
                         Time.deltaTime * closestSling.GetAxis());
+                    transform.Rotate(0,closestSling.GetDirection() * closestSling.GetAxis() * Time.deltaTime,0);
                 }
             }
             else
             {
                 closestSling.ResetLine();
-                
-               // if(!_carAnimation.IsPlaying())
-                    //_carAnimation.Play();
+                _carAnimationController.Play();
             }
 
         }
