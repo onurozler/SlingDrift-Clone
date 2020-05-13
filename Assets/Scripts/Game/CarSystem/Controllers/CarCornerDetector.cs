@@ -32,7 +32,7 @@ namespace Game.CarSystem.Controllers
             
             if (Physics.Raycast(_ray,out _raycastHit,5f,_layerMask))
             {
-                var final = _raycastHit.collider.GetComponent<FinalHighway>();
+                var final = _raycastHit.collider.GetComponentInParent<FinalHighway>();
                 if (final != null)
                 {
                     final.FinishLevel(_carBase);

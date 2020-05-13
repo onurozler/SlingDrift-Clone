@@ -1,4 +1,5 @@
 ﻿using Config;
+using Game.LevelSystem.LevelEvents;
 using Game.SlingSystem.Managers;
 using UnityEngine;
 using Zenject;
@@ -20,14 +21,17 @@ namespace Game.CarSystem.Controllers
         private void OnInstaller(SlingManager slingManager)
         {
             _slingManager = slingManager;
+            IsActive = false;
         }
         
         public void Initialize(CarAnimationController carAnimationController)
         {
+            LevelEventBus.SubscribeEvent(LevelEventType.STARTED, ()=> IsActive = true);
+            LevelEventBus.SubscribeEvent(LevelEventType.FAIL, ()=> IsActive = false);
+            
             _carAnimationController = carAnimationController;
             _carCornerDetector = new CarCornerDetector(transform);
             _carDirectionController = new CarDirectionController(transform);
-            IsActive = true;
             _movingActive = true;
         }
         private void FixedUpdate()

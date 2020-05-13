@@ -19,7 +19,21 @@ namespace Game.HighwaySystem.HighwayTypes
 
         public void FinishLevel(Transform car)
         {
-            car.transform.DOMove(FinishPosition, 1f);
+            var finishPos = FinishPosition;
+            switch (Direction)
+            {
+                case HighwayDirection.UP:
+                    finishPos.x -= 20;
+                    break;
+                case HighwayDirection.LEFT:
+                    finishPos.z += 20;
+                    break;
+                case HighwayDirection.RIGHT:
+                    finishPos.z -= 20;
+                    break;
+            }
+            
+            car.transform.DOMove(finishPos, 1f);
             LevelEventBus.InvokeEvent(LevelEventType.LEVEL_UP);
         }
         
