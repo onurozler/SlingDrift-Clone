@@ -492,6 +492,9 @@
                 <e p="SlingManager.cs" t="Include" />
               </e>
             </e>
+            <e p="View" t="Include">
+              <e p="PlayerView.cs" t="Include" />
+            </e>
           </e>
           <e p="Helpers" t="Include">
             <e p="Utils" t="Include">

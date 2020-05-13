@@ -49,7 +49,7 @@ namespace Game.CarSystem.Controllers
         private void CheckInput()
         {
             _movingActive = true;
-            var closestSling = _slingManager.GetSling(index);
+            var closestSling = _slingManager.GetSlingByID(index);
             if (Input.GetMouseButton(0))
             {
                 if (Vector3.Distance(closestSling.transform.position,transform.position) < 25f)
@@ -65,7 +65,7 @@ namespace Game.CarSystem.Controllers
             else
             {
                 if(Input.GetMouseButtonDown(1))
-                    _carDirectionController.Handle(_slingManager.GetSling(++index).GetFirstPosition());
+                    _carDirectionController.Handle(_slingManager.GetSlingByID(++index).GetFirstPosition());
                 
                 closestSling.ResetLine();
                 //_carAnimationController.Play();

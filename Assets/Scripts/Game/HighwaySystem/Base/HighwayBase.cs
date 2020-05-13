@@ -38,6 +38,9 @@ namespace Game.HighwaySystem.Base
         {
             IsActive = false;
             gameObject.SetActive(false);
+            transform.eulerAngles = Vector3.zero;
+            transform.position = Vector3.zero;
+            SetDirection(HighwayDirection.RIGHT);
         }
     }
 

@@ -6,6 +6,8 @@ namespace Game.SlingSystem.Base
 {
     public class SlingTowerBase : MonoBehaviour
     {
+        public int ID;
+        
         private HighwayBase _parentHighway;
         private Transform _sling;
 
