@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 660256135938560593}
   - component: {fileID: 660256135937690487}
   - component: {fileID: 660256135936619177}
-  m_Layer: 0
+  - component: {fileID: 8377162639518968556}
+  m_Layer: 8
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,6 +79,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &8377162639518968556
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660256135938623885}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 3.86, z: 0.1264702}
+  m_Center: {x: 0, y: 1.44, z: 1.4239836}
 --- !u!1 &1593154044900143784
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,7 +132,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5192458322254805876}
   - component: {fileID: 15535857193095851}
-  - component: {fileID: 1437204839759752254}
   m_Layer: 0
   m_Name: FinalHighway
   m_TagString: Untagged
@@ -156,16 +169,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsActive: 0
   Direction: 0
---- !u!65 &1437204839759752254
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6499092774661962521}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 15.844194, y: 1.7032852, z: 0.44528952}
-  m_Center: {x: 0.13966465, y: 0.3516426, z: 0.27735525}

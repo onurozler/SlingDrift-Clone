@@ -17,15 +17,11 @@ namespace Game.HighwaySystem.HighwayTypes
             transform.eulerAngles = new Vector3(0,(int)direction);
         }
 
-        private void OnTriggerEnter(Collider other)
+        public void FinishLevel(Transform car)
         {
-            var car = other.GetComponent<CarBase>();
-            
-            if (car != null)
-            {
-                car.transform.DOMove(FinishPosition, 1f);
-                LevelEventBus.InvokeEvent(LevelEventType.LEVEL_UP);
-            }
+            car.transform.DOMove(FinishPosition, 1f);
+            LevelEventBus.InvokeEvent(LevelEventType.LEVEL_UP);
         }
+        
     }
 }

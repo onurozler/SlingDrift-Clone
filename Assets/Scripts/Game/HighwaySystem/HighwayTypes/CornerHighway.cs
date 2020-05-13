@@ -1,4 +1,5 @@
-﻿using Game.HighwaySystem.Base;
+﻿using System;
+using Game.HighwaySystem.Base;
 using UnityEngine;
 using Utils;
 
@@ -15,6 +16,11 @@ namespace Game.HighwaySystem.HighwayTypes
             Direction = direction;
             transform.eulerAngles = new Vector3(0,(int)direction * 0.5f);
             transform.ChangePositionWithChild("FinishPosition");
+        }
+
+        private void OnCollisionEnter(Collision other)
+        {
+            Debug.Log("VAR");
         }
     }
 }

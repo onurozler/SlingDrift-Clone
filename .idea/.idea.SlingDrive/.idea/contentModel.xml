@@ -451,6 +451,7 @@
               </e>
               <e p="Controllers" t="Include">
                 <e p="CarAnimationController.cs" t="Include" />
+                <e p="CarCornerDetector.cs" t="Include" />
                 <e p="CarDirectionController.cs" t="Include" />
                 <e p="CarMovementController.cs" t="Include" />
               </e>

@@ -7,6 +7,7 @@ namespace Game.CarSystem.Controllers
 {
     public class CarMovementController : MonoBehaviour
     {
+        private CarCornerDetector _carCornerDetector;
         private CarDirectionController _carDirectionController;
         private CarAnimationController _carAnimationController;
         private SlingManager _slingManager;
@@ -24,15 +25,17 @@ namespace Game.CarSystem.Controllers
         public void Initialize(CarAnimationController carAnimationController)
         {
             _carAnimationController = carAnimationController;
+            _carCornerDetector = new CarCornerDetector(transform);
             _carDirectionController = new CarDirectionController(transform);
             IsActive = true;
             _movingActive = true;
         }
-        private void Update()
+        private void FixedUpdate()
         {
             if(!IsActive)
                 return;
             
+            _carCornerDetector.Detect();
             CheckInput();
             Move();
         }
