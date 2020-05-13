@@ -1,15 +1,18 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
 using UnityEngine;
+using Utils;
 
 namespace Game.CarSystem.Controllers
 {
     public class CarDirectionController
     {
         private Transform _carBase;
-        private CarDirection _currentDirection;
         private List<CarDirection> _directions;
+        private CarDirection _currentDirection;
+
 
         public CarDirectionController(Transform carBase)
         {
@@ -22,40 +25,30 @@ namespace Game.CarSystem.Controllers
 
         public void HandleDirection()
         {
+            var carY = _carBase.transform.eulerAngles.y;
+            Debug.Log(carY);
             var ordered = _directions.OrderBy(x => 
-                Mathf.Abs((int) x - _carBase.transform.eulerAngles.y)).ToList();
+                Mathf.Abs((int) _currentDirection - carY)).ToList();
 
-            _currentDirection = ordered[0];
-            Test();
+            Debug.Log(ordered[0]);
         }
 
         private void Test()
         {
             var carY = _carBase.transform.eulerAngles.y;
-
-            Debug.Log(carY);
-            Debug.Log((int)_currentDirection);
-            
-            if (carY > (int)_currentDirection)
-            {
-                var test2=
-                new Vector3(_carBase.transform.eulerAngles.x,
-                    _carBase.transform.eulerAngles.y - (carY - (int) _currentDirection),
-                    _carBase.transform.eulerAngles.z);
-
-                _carBase.transform.DORotate(test2, 0.2f);
-            }
-            else
-            {
-                
-            }
+            _carBase.DORotate(_carBase.up * -carY, 0.5f).OnComplete(() =>
+                {
+                    _carBase.DORotate(_carBase.up * (int)_currentDirection, 0.5f);
+                });
+            _currentDirection = CarDirection.NONE;
         }
     }
     
     public enum CarDirection
     {
+        NONE,
         UP = 90,
-        LEFT = 0,
-        RIGHT = 180,
+        LEFT = 360,
+        RIGHT = 180
     }
 }

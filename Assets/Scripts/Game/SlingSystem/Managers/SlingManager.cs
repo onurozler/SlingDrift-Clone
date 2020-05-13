@@ -22,7 +22,7 @@ namespace Game.SlingSystem.Managers
             _slingTowerBases.Add(slingTowerBase);
         }
 
-        public SlingTowerBase GetClosesSling(Vector3 carPos)
+        public SlingTowerBase GetClosestSling(Vector3 carPos)
         {
             var ordered =_slingTowerBases.OrderBy(x => 
                 Vector3.Distance(x.transform.position, carPos)).ToList();

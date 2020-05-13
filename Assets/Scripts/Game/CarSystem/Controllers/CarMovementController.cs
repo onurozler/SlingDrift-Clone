@@ -13,6 +13,8 @@ namespace Game.CarSystem.Controllers
         private SlingManager _slingManager;
         
         public bool IsActive;
+
+        private bool _movingActive;
         
         [Inject]
         private void OnInstaller(SlingManager slingManager)
@@ -25,6 +27,7 @@ namespace Game.CarSystem.Controllers
             _carAnimationController = carAnimationController;
             _carDirectionController = new CarDirectionController(transform);
             IsActive = true;
+            _movingActive = true;
         }
         private void Update()
         {
@@ -32,16 +35,27 @@ namespace Game.CarSystem.Controllers
                 return;
             
             CheckInput();
+            Move();
         }
 
+        private void Move()
+        {
+            if(!_movingActive)
+                return;
+            
+            transform.Translate(transform.forward * (Time.deltaTime * GameConfig.CAR_SPEED),Space.World);
+        }
+        
         private void CheckInput()
         {
-            var closestSling = _slingManager.GetClosesSling(transform.position);
+            _movingActive = true;
+            var closestSling = _slingManager.GetClosestSling(transform.position);
             if (Input.GetMouseButton(0))
             {
                 if (Vector3.Distance(closestSling.transform.position,transform.position) < 25f)
                 {
-                    _carAnimationController.Pause();
+                    _movingActive = false;
+                    //_carAnimationController.Pause();
                     closestSling.AddLine(transform);
                     transform.RotateAround(closestSling.transform.position,closestSling.transform.up * closestSling.GetDirection(), 
                         Time.deltaTime * GameConfig.CAR_ROTATING);
@@ -50,22 +64,9 @@ namespace Game.CarSystem.Controllers
             }
             else
             {
-                transform.Translate(transform.forward * (Time.deltaTime * GameConfig.CAR_SPEED),Space.World);
-
-                /*
-                if (transform.position.x < closestSling.GetFinishParent())
-                { 
-                    transform.Rotate(0,5,0);   
-                }
-                else
-                {
-                    
-                }*/
+                if (Input.GetMouseButtonDown(1))
+                    _carDirectionController.HandleDirection();
                 
-
-                //transform.position = new Vector3(closestSling.GetFinishParent(),transform.position.y,transform.position.z);
-                
-                //_carDirectionController.HandleDirection();
                 closestSling.ResetLine();
                 //_carAnimationController.Play();
             }

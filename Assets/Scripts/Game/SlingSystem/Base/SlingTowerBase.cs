@@ -1,6 +1,4 @@
-﻿using Game.CarSystem.Base;
-using Game.HighwaySystem.Base;
-using Game.HighwaySystem.HighwayTypes;
+﻿using Game.HighwaySystem.Base;
 using UnityEngine;
 using Utils;
 
@@ -28,11 +26,6 @@ namespace Game.SlingSystem.Base
             _sling.transform.ChangeScaleY(1f);
         }
 
-        public float GetFinishParent()
-        {
-            return _parentHighway.FinishPosition.x;
-        }
-        
         public int GetDirection()
         {
             if (_parentHighway.Direction == HighwayDirection.RIGHT)
