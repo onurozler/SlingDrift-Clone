@@ -11,6 +11,6 @@
 
         
         public static float CAR_SPEED = 30f;
-        public static int CAR_ROTATIN = 150;
+        public static int CAR_ROTATING = 150;
     }
 }

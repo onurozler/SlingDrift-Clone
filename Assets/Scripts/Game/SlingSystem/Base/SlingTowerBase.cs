@@ -40,10 +40,5 @@ namespace Game.SlingSystem.Base
 
             return -1;
         }
-
-        public int GetAxis()
-        {
-            return 150;
-        }
     }
 }

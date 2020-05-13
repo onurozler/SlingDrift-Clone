@@ -31,12 +31,7 @@ namespace Game.CarSystem.Controllers
             if(!IsActive)
                 return;
             
-            Move();
             CheckInput();
-        }
-        
-        private void Move()
-        {
         }
 
         private void CheckInput()
@@ -49,8 +44,8 @@ namespace Game.CarSystem.Controllers
                     _carAnimationController.Pause();
                     closestSling.AddLine(transform);
                     transform.RotateAround(closestSling.transform.position,closestSling.transform.up * closestSling.GetDirection(), 
-                        Time.deltaTime * closestSling.GetAxis());
-                    transform.Rotate(0,(closestSling.GetDirection() * closestSling.GetAxis() * Time.deltaTime)/4,0);
+                        Time.deltaTime * GameConfig.CAR_ROTATING);
+                    transform.Rotate(0,closestSling.GetDirection() * GameConfig.CAR_ROTATING * Time.deltaTime/4,0);
                 }
             }
             else
