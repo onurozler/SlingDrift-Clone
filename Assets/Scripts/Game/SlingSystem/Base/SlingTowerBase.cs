@@ -43,7 +43,7 @@ namespace Game.SlingSystem.Base
 
         public int GetAxis()
         {
-            return _parentHighway.GetType() == typeof(UCornerHighway) ? 150 : 90;
+            return 150;
         }
     }
 }

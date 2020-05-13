@@ -37,7 +37,6 @@ namespace Game.CarSystem.Controllers
         
         private void Move()
         {
-            transform.Translate(transform.forward * (Time.deltaTime * GameConfig.CAR_SPEED),Space.World);
         }
 
         private void CheckInput()
@@ -51,11 +50,14 @@ namespace Game.CarSystem.Controllers
                     closestSling.AddLine(transform);
                     transform.RotateAround(closestSling.transform.position,closestSling.transform.up * closestSling.GetDirection(), 
                         Time.deltaTime * closestSling.GetAxis());
-                    transform.Rotate(0,closestSling.GetDirection() * closestSling.GetAxis() * Time.deltaTime,0);
+                    transform.Rotate(0,(closestSling.GetDirection() * closestSling.GetAxis() * Time.deltaTime)/4,0);
                 }
             }
             else
             {
+                transform.Translate(transform.forward * (Time.deltaTime * GameConfig.CAR_SPEED),Space.World);
+
+                /*
                 if (transform.position.x < closestSling.GetFinishParent())
                 { 
                     transform.Rotate(0,5,0);   
@@ -63,7 +65,7 @@ namespace Game.CarSystem.Controllers
                 else
                 {
                     
-                }
+                }*/
                 
 
                 //transform.position = new Vector3(closestSling.GetFinishParent(),transform.position.y,transform.position.z);

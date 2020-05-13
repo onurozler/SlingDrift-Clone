@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08e7c058-d85c-484c-ba55-bf07afb3f757" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SlingDrive/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SlingDrive/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SlingDrive/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SlingDrive/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Base/CarBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Base/CarBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarMovementController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarMovementController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Config/GameConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Config/GameConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarMovementController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/SlingSystem/Base/SlingTowerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/SlingSystem/Base/SlingTowerBase.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,29 +16,30 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Managers/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Internal/Assert.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/SlingSystem/Base/SlingTowerBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarDirectionController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/LevelEvents/LevelEvent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Base/CarBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/LevelEvents/LevelEventBus.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B80225B3-57C6-4115-895F-5655E67DB547/73/d982c0ba/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/HighwayTypes/FinalHighway.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarAnimationController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Managers/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Managers/AssetManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarMovementController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/SlingSystem/Base/SlingTowerBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Installers/GameInstaller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Managers/PoolManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/Controllers/LevelGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Config/GameConfig.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/Managers/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/HighwayTypes/StraightHighway.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarDirectionController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/LevelEvents/LevelEvent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Base/CarBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/SlingSystem/Managers/SlingManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/LevelEvents/LevelEventBus.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/HighwayTypes/CornerHighway.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/LevelData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Helpers/Utils/OnurExtensionMethods.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/Base/HighwayBase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/HighwayTypes/FinalHighway.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/HighwayTypes/UCornerHighway.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarAnimationController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -56,7 +55,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/Managers/PoolManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/HighwayTypes/FinalHighway.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/CarBase.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Config/GameConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/Managers/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Installers/GameInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/Managers/LevelManager.cs" />
@@ -69,9 +67,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarAnimationController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Managers/CarDirectionManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SlingSystem/Base/SlingTowerBase.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarDirectionController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarMovementController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SlingSystem/Base/SlingTowerBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Config/GameConfig.cs" />
       </list>
     </option>
   </component>
@@ -133,7 +132,7 @@
       <workItem from="1589273920638" duration="27924000" />
       <workItem from="1589306623243" duration="6052000" />
       <workItem from="1589316588070" duration="831000" />
-      <workItem from="1589365667882" duration="6368000" />
+      <workItem from="1589365667882" duration="7910000" />
     </task>
     <servers />
   </component>
