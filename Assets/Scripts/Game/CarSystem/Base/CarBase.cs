@@ -9,7 +9,7 @@ namespace Game.CarSystem.Base
         private Camera _carCamera;
         private Vector3 _cameraOffset;
 
-        private CarController _carController;
+        private CarMovementController _carMovementController;
         private CarAnimationController _carAnimationController;
         
         public void Initialize(Transform objeTransform)
@@ -20,8 +20,8 @@ namespace Game.CarSystem.Base
             transform.eulerAngles = objeTransform.eulerAngles;
             
             _carAnimationController = new CarAnimationController(transform);
-            _carController = GetComponent<CarController>();
-            _carController.Initialize(_carAnimationController);
+            _carMovementController = GetComponent<CarMovementController>();
+            _carMovementController.Initialize(_carAnimationController);
         }
 
         private void LateUpdate()

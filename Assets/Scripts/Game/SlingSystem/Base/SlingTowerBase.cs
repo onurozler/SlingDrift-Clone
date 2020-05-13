@@ -28,6 +28,11 @@ namespace Game.SlingSystem.Base
             _sling.transform.ChangeScaleY(1f);
         }
 
+        public float GetFinishParent()
+        {
+            return _parentHighway.FinishPosition.x;
+        }
+        
         public int GetDirection()
         {
             if (_parentHighway.Direction == HighwayDirection.RIGHT)
