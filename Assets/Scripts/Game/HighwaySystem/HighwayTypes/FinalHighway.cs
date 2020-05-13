@@ -1,4 +1,6 @@
-﻿using Game.HighwaySystem.Base;
+﻿using DG.Tweening;
+using Game.CarSystem.Base;
+using Game.HighwaySystem.Base;
 using Game.LevelSystem.LevelEvents;
 using UnityEngine;
 
@@ -17,8 +19,13 @@ namespace Game.HighwaySystem.HighwayTypes
 
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log("LEVEL FINISHED!");
-            LevelEventBus.InvokeEvent(LevelEventType.LEVEL_UP);
+            var car = other.GetComponent<CarBase>();
+            
+            if (car != null)
+            {
+                car.transform.DOMove(FinishPosition, 1f);
+                LevelEventBus.InvokeEvent(LevelEventType.LEVEL_UP);
+            }
         }
     }
 }

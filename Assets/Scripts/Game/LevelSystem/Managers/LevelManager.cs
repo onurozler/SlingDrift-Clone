@@ -4,6 +4,7 @@ using Game.HighwaySystem.Base;
 using Game.LevelSystem.LevelEvents;
 using Game.SlingSystem.Base;
 using Game.SlingSystem.Managers;
+using Utils;
 using Zenject;
 
 namespace Game.LevelSystem.Managers
@@ -51,8 +52,11 @@ namespace Game.LevelSystem.Managers
             var level = _levelDatas.FirstOrDefault(x => x.LevelIndex == levelIndex);
             if(level == null)
                 return;
-            
-            level.AllLevelHighways.ForEach(x=>x.Deactivate());
+
+            Timer.Instance.TimerWait(4f, () =>
+            {
+                level.AllLevelHighways.ForEach(x => x.Deactivate());
+            });
             _levelDatas.Remove(level);
         }
     }

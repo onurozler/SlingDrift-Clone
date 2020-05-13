@@ -1,5 +1,4 @@
 ﻿using Config;
-using DG.Tweening;
 using Game.SlingSystem.Managers;
 using UnityEngine;
 using Zenject;
@@ -45,11 +44,12 @@ namespace Game.CarSystem.Controllers
             
             transform.Translate(transform.forward * (Time.deltaTime * GameConfig.CAR_SPEED),Space.World);
         }
-        
+
+        private int index = 0;
         private void CheckInput()
         {
             _movingActive = true;
-            var closestSling = _slingManager.GetClosestSling(transform.position);
+            var closestSling = _slingManager.GetSling(index);
             if (Input.GetMouseButton(0))
             {
                 if (Vector3.Distance(closestSling.transform.position,transform.position) < 25f)
@@ -64,6 +64,9 @@ namespace Game.CarSystem.Controllers
             }
             else
             {
+                if(Input.GetMouseButtonDown(1))
+                    _carDirectionController.Handle(_slingManager.GetSling(++index).GetFirstPosition());
+                
                 closestSling.ResetLine();
                 //_carAnimationController.Play();
             }
