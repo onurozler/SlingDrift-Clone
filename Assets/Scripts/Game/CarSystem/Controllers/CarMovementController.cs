@@ -64,9 +64,6 @@ namespace Game.CarSystem.Controllers
             }
             else
             {
-                if (Input.GetMouseButtonDown(1))
-                    _carDirectionController.HandleDirection();
-                
                 closestSling.ResetLine();
                 //_carAnimationController.Play();
             }

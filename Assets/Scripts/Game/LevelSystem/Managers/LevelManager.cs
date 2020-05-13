@@ -11,7 +11,6 @@ namespace Game.LevelSystem.Managers
     public class LevelManager
     {
         private SlingManager _slingManager;
-        
         private List<LevelData> _levelDatas;
         private int _deleteIndex;
 
@@ -32,11 +31,14 @@ namespace Game.LevelSystem.Managers
         
         public void AddLevel(int levelIndex, HighwayBase highwayBase)
         {
-            var level = _levelDatas.FirstOrDefault(x => x.LevelIndex == levelIndex) ?? new LevelData(levelIndex);
-            _levelDatas.Add(level);
+            var level = _levelDatas.FirstOrDefault(x => x.LevelIndex == levelIndex);
+            if (level == null)
+            {
+                level = new LevelData(levelIndex);
+                _levelDatas.Add(level);
+            }
             level.AllLevelHighways.Add(highwayBase);
-
-            level.AllLevelHighways.ForEach(x=> _slingManager.Add(x.GetComponentInChildren<SlingTowerBase>()));
+            _slingManager.Add(highwayBase.GetComponentInChildren<SlingTowerBase>());
         }
 
         public HighwayBase GetHighwayOfLevel(int levelIndex,int highwayIndex)

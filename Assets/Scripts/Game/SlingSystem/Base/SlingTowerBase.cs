@@ -26,6 +26,11 @@ namespace Game.SlingSystem.Base
             _sling.transform.ChangeScaleY(1f);
         }
 
+        public Vector3 GetFirstPosition()
+        {
+            return _parentHighway.transform.position;
+        }
+        
         public int GetDirection()
         {
             if (_parentHighway.Direction == HighwayDirection.RIGHT)
