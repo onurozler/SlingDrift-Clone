@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Game.HighwaySystem.Base;
+using Game.LevelSystem.LevelEvents;
 using UnityEngine;
 using Zenject;
 
@@ -37,6 +38,11 @@ namespace Game.Managers
             var highWay = GetAvailableHighWay<T>();
             highWay.transform.position = position;
             return highWay;
+        }
+
+        public void DeactivateWholePool()
+        {
+            _highwayBases.ForEach(x=>x.Deactivate());
         }
     }
 }

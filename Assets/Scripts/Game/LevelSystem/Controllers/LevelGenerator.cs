@@ -31,6 +31,8 @@ namespace Game.LevelSystem.Controllers
         public void Initialize()
         {
             GenerateLevels(3);
+            
+           // LevelEventBus.SubscribeEvent(LevelEventType.STARTED, () =>GenerateLevels(1));
             LevelEventBus.SubscribeEvent(LevelEventType.LEVEL_UP, () =>
             {
                 Timer.Instance.TimerWait(5f, () => GenerateLevels(1));
