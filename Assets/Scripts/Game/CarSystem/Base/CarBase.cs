@@ -35,6 +35,12 @@ namespace Game.CarSystem.Base
                 _carAnimationController.Play();
                 gameObject.SetActive(true);
             });
+            LevelEventBus.SubscribeEvent(LevelEventType.FAIL,() 
+                =>
+            {
+                _carAnimationController.Pause();
+                gameObject.SetActive(false);
+            });
         }
 
         public void SetCarPosition(Transform objeTransform)

@@ -31,7 +31,11 @@ namespace Game.CarSystem.Controllers
             _carDirectionController = carDirectionController;
 
             LevelEventBus.SubscribeEvent(LevelEventType.STARTED, ()=> IsActive = true);
-            LevelEventBus.SubscribeEvent(LevelEventType.FAIL, ()=> IsActive = false);
+            LevelEventBus.SubscribeEvent(LevelEventType.FAIL, ()=>
+            {
+                index = 0;
+                IsActive = false;
+            });
             
             _carCornerDetector = new CarCornerDetector(transform);
             _movingActive = true;

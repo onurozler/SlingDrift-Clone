@@ -43,10 +43,7 @@ namespace Game.SlingSystem.Base
         public bool IsCloseTo(Transform carBase)
         {
             if (_parentHighway.GetType() == typeof(UCornerHighway))
-            {
-                Debug.Log(Vector3.Distance(carBase.transform.position, transform.position));
                 return Vector3.Distance(carBase.transform.position, transform.position) < GameConfig.U_CORNER_INTERACTIBLE;
-            }
 
             return Vector3.Distance(carBase.transform.position, transform.position) < GameConfig.CORNER_INTERACTIBLE;
         }
