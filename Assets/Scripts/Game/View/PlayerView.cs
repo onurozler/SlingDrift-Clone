@@ -22,11 +22,21 @@ namespace Game.View
             
             _startButton.onClick.AddListener(() => LevelEventBus.InvokeEvent(LevelEventType.STARTED));
             
-            LevelEventBus.SubscribeEvent(LevelEventType.STARTED, ()=>ButtonVisible(false));
+            LevelEventBus.SubscribeEvent(LevelEventType.STARTED, ()=>
+            {
+                UpdateCounter(0);
+                _counterText.enabled = true;
+                ButtonVisible(false);
+            });
             LevelEventBus.SubscribeEvent(LevelEventType.FAIL, ()=>ButtonVisible(true));
             LevelEventBus.SubscribeEvent(LevelEventType.LEVEL_UP,OnLevelUp);
         }
 
+        public void UpdateCounter(int count)
+        {
+            _counterText.text = count.ToString();
+        }
+        
         private void OnLevelUp()
         {
             _levelUpText.enabled = true;

@@ -17,10 +17,5 @@ namespace Game.HighwaySystem.HighwayTypes
             transform.eulerAngles = new Vector3(0,(int)direction * 0.5f);
             transform.ChangePositionWithChild("FinishPosition");
         }
-
-        private void OnCollisionEnter(Collision other)
-        {
-            Debug.Log("VAR");
-        }
     }
 }

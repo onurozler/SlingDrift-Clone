@@ -2,6 +2,7 @@
 using Game.LevelSystem.LevelEvents;
 using Game.SlingSystem.Base;
 using Game.SlingSystem.Managers;
+using Game.View;
 using UnityEngine;
 
 namespace Game.CarSystem.Controllers
@@ -11,13 +12,17 @@ namespace Game.CarSystem.Controllers
         private CarDirectionController _carDirectionController;
         private SlingManager _slingManager;
         private SlingTowerBase _targetSling;
+        private PlayerView _playerView;
+        
         private int _targetSlingIndex;
         
         
-        public CarSlingController(CarDirectionController carDirectionController, SlingManager slingManager)
+        public CarSlingController(CarDirectionController carDirectionController, SlingManager slingManager, 
+            PlayerView playerView)
         {
             _slingManager = slingManager;
             _carDirectionController = carDirectionController;
+            _playerView = playerView;
             
             LevelEventBus.SubscribeEvent(LevelEventType.STARTED, ()=>
             {
@@ -55,6 +60,7 @@ namespace Game.CarSystem.Controllers
             if (_targetSling.IsPassed(carBase))
             {
                 _carDirectionController.Handle(_slingManager.GetSlingByID(++_targetSlingIndex).GetFirstPosition());
+                _playerView.UpdateCounter(_targetSlingIndex);
             }
         }
     }
