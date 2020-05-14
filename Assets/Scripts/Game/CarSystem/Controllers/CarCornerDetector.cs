@@ -30,7 +30,7 @@ namespace Game.CarSystem.Controllers
             _ray.origin = _carBase.transform.position;
             _ray.direction = _carBase.transform.forward;
             
-            if (Physics.Raycast(_ray,out _raycastHit,2f,_layerMask))
+            if (Physics.Raycast(_ray,out _raycastHit,3f,_layerMask))
             {
                 var final = _raycastHit.collider.GetComponentInParent<FinalHighway>();
                 if (final != null)

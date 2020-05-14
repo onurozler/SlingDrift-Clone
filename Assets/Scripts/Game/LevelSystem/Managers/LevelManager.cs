@@ -20,14 +20,14 @@ namespace Game.LevelSystem.Managers
         private void OnInstaller(SlingManager slingManager)
         {
             _slingManager = slingManager;
+            _deleteIndex = 0;
+            
+            LevelEventBus.SubscribeEvent(LevelEventType.LEVEL_UP, ()=>DeleteLevel(_deleteIndex++));
         }
         
         public LevelManager()
         {
             _levelDatas = new List<LevelData>();
-            _deleteIndex = 0;
-            
-            LevelEventBus.SubscribeEvent(LevelEventType.LEVEL_UP, ()=>DeleteLevel(_deleteIndex++));
         }
         
         public void AddLevel(int levelIndex, HighwayBase highwayBase)
@@ -57,6 +57,7 @@ namespace Game.LevelSystem.Managers
                 _levelDatas[i].AllLevelHighways.ForEach(x=>x.Deactivate());
                 _levelDatas.Remove(_levelDatas[i]);
             }
+            _slingManager.Reset();
         }
 
         private void DeleteLevel(int levelIndex)
@@ -67,7 +68,14 @@ namespace Game.LevelSystem.Managers
 
             Timer.Instance.TimerWait(4f, () =>
             {
-                level.AllLevelHighways.ForEach(x => x.Deactivate());
+                level.AllLevelHighways.ForEach(x =>
+                {
+                    var sling = x.GetComponentInChildren<SlingTowerBase>();
+                    if (sling != null)
+                        _slingManager.Delete(sling.ID);
+                    
+                    x.Deactivate();
+                });
             });
             _levelDatas.Remove(level);
         }

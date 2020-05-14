@@ -8,9 +8,10 @@ namespace Game.CarSystem.Controllers
 {
     public class CarMovementController : MonoBehaviour
     {
-        private CarCornerDetector _carCornerDetector;
-        private CarDirectionController _carDirectionController;
         private CarAnimationController _carAnimationController;
+        private CarDirectionController _carDirectionController;
+        private CarCornerDetector _carCornerDetector;
+        
         private SlingManager _slingManager;
         
         public bool IsActive;
@@ -24,16 +25,16 @@ namespace Game.CarSystem.Controllers
             IsActive = false;
         }
         
-        public void Initialize(CarAnimationController carAnimationController)
+        public void Initialize(CarAnimationController carAnimationController, CarDirectionController carDirectionController)
         {
+            _carAnimationController = carAnimationController;
+            _carDirectionController = carDirectionController;
+
             LevelEventBus.SubscribeEvent(LevelEventType.STARTED, ()=> IsActive = true);
             LevelEventBus.SubscribeEvent(LevelEventType.FAIL, ()=> IsActive = false);
             
-            _carAnimationController = carAnimationController;
             _carCornerDetector = new CarCornerDetector(transform);
-            _carDirectionController = new CarDirectionController(transform,carAnimationController);
             _movingActive = true;
-            _carAnimationController.Play();
         }
         private void FixedUpdate()
         {
@@ -60,7 +61,7 @@ namespace Game.CarSystem.Controllers
             var closestSling = _slingManager.GetSlingByID(index);
             if (Input.GetMouseButton(0))
             {
-                if (Vector3.Distance(closestSling.transform.position,transform.position) < 25f)
+                if (closestSling.IsCloseTo(transform))
                 {
                     _movingActive = false;
                     _carAnimationController.Pause();
@@ -76,9 +77,7 @@ namespace Game.CarSystem.Controllers
                 {
                     _carDirectionController.Handle(_slingManager.GetSlingByID(++index).GetFirstPosition());
                 }
-
-                //closestSling.ResetLine();
-                //_carAnimationController.Play();
+                closestSling.ResetLine();
             }
 
         }

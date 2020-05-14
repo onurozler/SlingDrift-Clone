@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Game.SlingSystem.Base;
-using UnityEngine;
 
 namespace Game.SlingSystem.Managers
 {
@@ -25,6 +24,24 @@ namespace Game.SlingSystem.Managers
             _slingTowerBases.Add(slingTowerBase);
         }
 
+        public void Delete(int index)
+        {
+            if(_slingTowerBases.Count <= 0)
+                return;
+
+            var sling = _slingTowerBases.FirstOrDefault(x => x.ID == index);
+            if (sling != null)
+            {
+                _slingTowerBases.Remove(sling);
+            }
+        }
+
+        public void Reset()
+        {
+            _index = 0;
+            _slingTowerBases.Clear();
+        }
+        
         public SlingTowerBase GetSlingByID(int index)
         {
             return _slingTowerBases?.FirstOrDefault(x=>x.ID == index);

@@ -1,4 +1,5 @@
 ﻿using Game.HighwaySystem.Base;
+using Game.HighwaySystem.HighwayTypes;
 using UnityEngine;
 using Utils;
 
@@ -36,6 +37,17 @@ namespace Game.SlingSystem.Base
         public bool IsPassed(Transform carBase)
         {
             return Vector3.Distance(carBase.transform.position, _parentHighway.FinishPosition) < 10f;
+        }
+
+        public bool IsCloseTo(Transform carBase)
+        {
+            if (_parentHighway.GetType() == typeof(UCornerHighway))
+            {
+                Debug.Log(Vector3.Distance(carBase.transform.position, transform.position));
+                return Vector3.Distance(carBase.transform.position, transform.position) < 27f;
+            }
+
+            return Vector3.Distance(carBase.transform.position, transform.position) < 25f;
         }
         
         public int GetDirection()

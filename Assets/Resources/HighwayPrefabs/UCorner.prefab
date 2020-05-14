@@ -346,7 +346,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4706588353614811687}
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0.05, y: 0.92, z: 0.59}
+  m_LocalPosition: {x: 0.05000019, y: 0.92, z: 0.59000003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4706588352416881760}
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 7996274164206992978}
   - component: {fileID: 7996274164204144594}
   - component: {fileID: 7996274164204996638}
-  - component: {fileID: 730445764929248244}
+  - component: {fileID: 7190392854372765459}
   m_Layer: 0
   m_Name: SlingTower
   m_TagString: Untagged
@@ -606,7 +606,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &730445764929248244
+--- !u!114 &7190392854372765459
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
