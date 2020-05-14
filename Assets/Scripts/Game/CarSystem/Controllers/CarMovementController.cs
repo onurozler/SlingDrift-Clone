@@ -59,6 +59,9 @@ namespace Game.CarSystem.Controllers
         {
             _movingActive = true;
             var closestSling = _slingManager.GetSlingByID(index);
+            if(closestSling == null)
+                return;
+            
             if (Input.GetMouseButton(0))
             {
                 if (closestSling.IsCloseTo(transform))

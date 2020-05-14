@@ -1,4 +1,5 @@
-﻿using Game.HighwaySystem.Base;
+﻿using Config;
+using Game.HighwaySystem.Base;
 using Game.HighwaySystem.HighwayTypes;
 using UnityEngine;
 using Utils;
@@ -36,7 +37,7 @@ namespace Game.SlingSystem.Base
 
         public bool IsPassed(Transform carBase)
         {
-            return Vector3.Distance(carBase.transform.position, _parentHighway.FinishPosition) < 10f;
+            return Vector3.Distance(carBase.transform.position, _parentHighway.FinishPosition) < GameConfig.CAR_PASS_TRESHOLD;
         }
 
         public bool IsCloseTo(Transform carBase)
@@ -44,10 +45,10 @@ namespace Game.SlingSystem.Base
             if (_parentHighway.GetType() == typeof(UCornerHighway))
             {
                 Debug.Log(Vector3.Distance(carBase.transform.position, transform.position));
-                return Vector3.Distance(carBase.transform.position, transform.position) < 27f;
+                return Vector3.Distance(carBase.transform.position, transform.position) < GameConfig.U_CORNER_INTERACTIBLE;
             }
 
-            return Vector3.Distance(carBase.transform.position, transform.position) < 25f;
+            return Vector3.Distance(carBase.transform.position, transform.position) < GameConfig.CORNER_INTERACTIBLE;
         }
         
         public int GetDirection()

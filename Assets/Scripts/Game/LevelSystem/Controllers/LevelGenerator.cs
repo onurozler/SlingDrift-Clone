@@ -31,11 +31,15 @@ namespace Game.LevelSystem.Controllers
 
         public void Initialize()
         {
-            LevelEventBus.SubscribeEvent(LevelEventType.STARTED, ()=>
+            LevelEventBus.SubscribeEvent(LevelEventType.FAIL, () =>
             {
                 _finalHighway = null;
                 _levelIndex = 0;
                 _levelManager.DeleteWholeLevels();
+            });
+            
+            LevelEventBus.SubscribeEvent(LevelEventType.STARTED, ()=>
+            {
                 GenerateLevels(3);
                 _carBase.SetCarPosition(_levelManager.GetHighwayOfLevel(0,0).transform);
             });

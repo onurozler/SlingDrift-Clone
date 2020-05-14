@@ -16,8 +16,14 @@ namespace Game.CarSystem.Controllers
 
         public void Handle(Vector3 target)
         {
-            _carBase.transform.DOLookAt(target, 0.4f).
-                OnComplete(_carAnimationController.Play);
+            Vector3 carFirstTarget = target;
+            carFirstTarget.x += 30;
+
+            _carBase.transform.DOLookAt(carFirstTarget, 0.5f).OnComplete(() =>
+            {
+                _carBase.transform.DOLookAt(target, 0.4f).
+                    OnComplete(_carAnimationController.Play);
+            });
         }
     }
     

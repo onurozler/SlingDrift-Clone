@@ -4,6 +4,7 @@ using Game.HighwaySystem.Base;
 using Game.LevelSystem.LevelEvents;
 using Game.SlingSystem.Base;
 using Game.SlingSystem.Managers;
+using UnityEngine;
 using Utils;
 using Zenject;
 
@@ -51,12 +52,12 @@ namespace Game.LevelSystem.Managers
         {
             if(_levelDatas.Count <= 0)
                 return;
-
-            for (int i = 0; i < _levelDatas.Count; i++)
+            
+            foreach (var level in _levelDatas)
             {
-                _levelDatas[i].AllLevelHighways.ForEach(x=>x.Deactivate());
-                _levelDatas.Remove(_levelDatas[i]);
+                level.AllLevelHighways.ForEach(x=>x.Deactivate());
             }
+            _levelDatas.Clear();
             _slingManager.Reset();
         }
 
