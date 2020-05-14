@@ -32,6 +32,11 @@ namespace Game.SlingSystem.Base
         {
             return _parentHighway.transform.position;
         }
+
+        public bool IsPassed(Transform carBase)
+        {
+            return Vector3.Distance(carBase.transform.position, _parentHighway.FinishPosition) < 10f;
+        }
         
         public int GetDirection()
         {

@@ -1,4 +1,5 @@
 ﻿using Game.CarSystem.Controllers;
+using Game.LevelSystem.LevelEvents;
 using UnityEngine;
 
 namespace Game.CarSystem.Base
@@ -20,6 +21,8 @@ namespace Game.CarSystem.Base
             _carAnimationController = new CarAnimationController(transform);
             _carMovementController = GetComponent<CarMovementController>();
             _carMovementController.Initialize(_carAnimationController);
+            
+            LevelEventBus.SubscribeEvent(LevelEventType.STARTED, ()=>gameObject.SetActive(true));
         }
 
         public void SetCarPosition(Transform objeTransform)

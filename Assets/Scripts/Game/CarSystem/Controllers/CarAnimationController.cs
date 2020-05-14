@@ -18,7 +18,7 @@ namespace Game.CarSystem.Controllers
             if (_carAnimation == null || !_carAnimation.IsPlaying())
             {
                 _carAnimation?.Kill();
-                _carAnimation = _carBase.DOShakeRotation(0.2f,_carBase.up * 6f).SetLoops(-1);
+                _carAnimation = _carBase.DOShakeRotation(0.2f,_carBase.up * 4f).SetLoops(-1);
             }
         }
 

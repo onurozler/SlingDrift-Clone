@@ -31,8 +31,9 @@ namespace Game.CarSystem.Controllers
             
             _carAnimationController = carAnimationController;
             _carCornerDetector = new CarCornerDetector(transform);
-            _carDirectionController = new CarDirectionController(transform);
+            _carDirectionController = new CarDirectionController(transform,carAnimationController);
             _movingActive = true;
+            _carAnimationController.Play();
         }
         private void FixedUpdate()
         {
@@ -62,7 +63,7 @@ namespace Game.CarSystem.Controllers
                 if (Vector3.Distance(closestSling.transform.position,transform.position) < 25f)
                 {
                     _movingActive = false;
-                    //_carAnimationController.Pause();
+                    _carAnimationController.Pause();
                     closestSling.AddLine(transform);
                     transform.RotateAround(closestSling.transform.position,closestSling.transform.up * closestSling.GetDirection(), 
                         Time.deltaTime * GameConfig.CAR_ROTATING);
@@ -71,10 +72,12 @@ namespace Game.CarSystem.Controllers
             }
             else
             {
-                if(Input.GetMouseButtonDown(1))
+                if (closestSling.IsPassed(transform))
+                {
                     _carDirectionController.Handle(_slingManager.GetSlingByID(++index).GetFirstPosition());
-                
-               // closestSling.ResetLine();
+                }
+
+                //closestSling.ResetLine();
                 //_carAnimationController.Play();
             }
 

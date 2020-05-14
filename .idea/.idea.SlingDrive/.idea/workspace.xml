@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="08e7c058-d85c-484c-ba55-bf07afb3f757" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SlingDrive/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SlingDrive/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Base/CarBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Base/CarBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/Controllers/LevelGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/Controllers/LevelGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/Managers/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/Managers/LevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Managers/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarDirectionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarDirectionController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarMovementController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/SlingSystem/Base/SlingTowerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/SlingSystem/Base/SlingTowerBase.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,9 +60,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Managers/CarDirectionManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Config/GameConfig.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Helpers/Utils/OnurExtensionMethods.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SlingSystem/Base/SlingTowerBase.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/SlingSystem/Managers/SlingManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarDirectionController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Installers/GameInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/Base/HighwayBase.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/HighwayTypes/CornerHighway.cs" />
@@ -73,13 +69,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarRoadDetector.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/HighwaySystem/HighwayTypes/FinalHighway.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/View/PlayerView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarMovementController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarCornerDetector.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/Managers/PoolManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/Managers/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/Managers/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Base/CarBase.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/Controllers/LevelGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/Managers/LevelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/SlingSystem/Base/SlingTowerBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarMovementController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarDirectionController.cs" />
       </list>
     </option>
   </component>
@@ -146,7 +144,7 @@
       <workItem from="1589381219149" duration="7998000" />
       <workItem from="1589389702161" duration="5023000" />
       <workItem from="1589396339007" duration="1820000" />
-      <workItem from="1589450211326" duration="665000" />
+      <workItem from="1589450211326" duration="1783000" />
     </task>
     <servers />
   </component>
@@ -237,9 +235,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1589386350119" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1589450972483">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1589452134281">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589450972483" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589452134281" />
   </component>
 </project>
