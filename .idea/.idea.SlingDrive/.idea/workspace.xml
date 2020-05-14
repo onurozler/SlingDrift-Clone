@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08e7c058-d85c-484c-ba55-bf07afb3f757" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SlingDrive/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SlingDrive/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Base/CarBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Base/CarBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarMovementController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/SlingSystem/Base/SlingTowerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/SlingSystem/Base/SlingTowerBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarDirectionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarDirectionController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,12 +69,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/SlingSystem/Managers/SlingManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarCornerDetector.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Config/GameConfig.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarDirectionController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/Controllers/LevelGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/Managers/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarMovementController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/SlingSystem/Base/SlingTowerBase.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Base/CarBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarDirectionController.cs" />
       </list>
     </option>
   </component>
@@ -144,7 +141,7 @@
       <workItem from="1589381219149" duration="7998000" />
       <workItem from="1589389702161" duration="5023000" />
       <workItem from="1589396339007" duration="1820000" />
-      <workItem from="1589450211326" duration="5635000" />
+      <workItem from="1589450211326" duration="6024000" />
     </task>
     <servers />
   </component>
