@@ -1,6 +1,8 @@
 ﻿using Game.CarSystem.Controllers;
 using Game.LevelSystem.LevelEvents;
+using Game.SlingSystem.Managers;
 using UnityEngine;
+using Zenject;
 
 namespace Game.CarSystem.Base
 {
@@ -14,9 +16,17 @@ namespace Game.CarSystem.Base
 
         private CarMovementController _carMovementController;
         private CarDirectionController _carDirectionController;
+        private CarSlingController _carSlingController;
 
         #endregion
 
+        private SlingManager _slingManager;
+        
+        [Inject]
+        private void OnInstaller(SlingManager slingManager)
+        {
+            _slingManager = slingManager;
+        }
         
         public void Initialize()
         {
@@ -24,9 +34,10 @@ namespace Game.CarSystem.Base
             _cameraOffset = _carCamera.transform.position - transform.position;
             
             _carDirectionController = new CarDirectionController(transform);
+            _carSlingController = new CarSlingController(_carDirectionController,_slingManager);
 
             _carMovementController = GetComponent<CarMovementController>();
-            _carMovementController.Initialize(_carDirectionController);
+            _carMovementController.Initialize(_carSlingController);
             
             LevelEventBus.SubscribeEvent(LevelEventType.STARTED, ()=>
             {

@@ -1,14 +1,11 @@
 ﻿using Config;
 using Game.LevelSystem.LevelEvents;
-using Game.SlingSystem.Managers;
 using UnityEngine;
-using Zenject;
 
 namespace Game.CarSystem.Controllers
 {
     public class CarMovementController : MonoBehaviour
     {
-        private SlingManager _slingManager;
         private CarSlingController _carSlingController;
         private CarDirectionController _carDirectionController;
         private CarCornerDetector _carCornerDetector;
@@ -18,19 +15,12 @@ namespace Game.CarSystem.Controllers
         public bool IsActive;
 
         private bool _movingActive;
-
-        [Inject]
-        private void OnInstaller(SlingManager slingManager)
-        {
-            _slingManager = slingManager;
-        }
         
-        public void Initialize(CarDirectionController carDirectionController)
+        public void Initialize(CarSlingController carSlingController)
         {
             IsActive = false;
 
-            _carDirectionController = carDirectionController;
-            _carSlingController = new CarSlingController(_carDirectionController,_slingManager);
+            _carSlingController = carSlingController;
 
             _driftEffect = GetComponentInChildren<TrailRenderer>();
 
