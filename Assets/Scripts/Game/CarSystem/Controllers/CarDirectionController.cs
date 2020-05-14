@@ -1,17 +1,19 @@
 ﻿using DG.Tweening;
+using Game.LevelSystem.LevelEvents;
 using UnityEngine;
 
 namespace Game.CarSystem.Controllers
 {
     public class CarDirectionController
     {
+        private Tween _handleAnim;
         private Transform _carBase;
-        private CarAnimationController _carAnimationController;
         
-        public CarDirectionController(Transform carBase, CarAnimationController carAnimationController)
+        public CarDirectionController(Transform carBase)
         {
             _carBase = carBase;
-            _carAnimationController = carAnimationController;
+            
+            LevelEventBus.SubscribeEvent(LevelEventType.FAIL,()=>_handleAnim.Kill());
         }
 
         public void Handle(Vector3 target)
@@ -19,11 +21,9 @@ namespace Game.CarSystem.Controllers
             Vector3 carFirstTarget = target;
             carFirstTarget.x += 30;
 
-            _carBase.transform.DOLookAt(carFirstTarget, 0.5f).OnComplete(() =>
-            {
-                _carBase.transform.DOLookAt(target, 0.4f).
-                    OnComplete(_carAnimationController.Play);
-            });
+            _handleAnim = _carBase.transform.DOLookAt(carFirstTarget, 0.5f).OnComplete(() =>
+                _carBase.transform.DOLookAt(target, 0.4f)
+                );
         }
     }
     

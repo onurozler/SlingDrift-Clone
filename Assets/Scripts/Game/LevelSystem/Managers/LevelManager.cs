@@ -4,7 +4,6 @@ using Game.HighwaySystem.Base;
 using Game.LevelSystem.LevelEvents;
 using Game.SlingSystem.Base;
 using Game.SlingSystem.Managers;
-using UnityEngine;
 using Utils;
 using Zenject;
 
@@ -21,8 +20,8 @@ namespace Game.LevelSystem.Managers
         private void OnInstaller(SlingManager slingManager)
         {
             _slingManager = slingManager;
-            _deleteIndex = 0;
             
+            LevelEventBus.SubscribeEvent(LevelEventType.STARTED, () => _deleteIndex = 0);
             LevelEventBus.SubscribeEvent(LevelEventType.LEVEL_UP, ()=>DeleteLevel(_deleteIndex++));
         }
         
