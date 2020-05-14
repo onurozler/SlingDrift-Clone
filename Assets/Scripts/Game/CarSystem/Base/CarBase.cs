@@ -12,18 +12,22 @@ namespace Game.CarSystem.Base
         private CarMovementController _carMovementController;
         private CarAnimationController _carAnimationController;
         
-        public void Initialize(Transform objeTransform)
+        public void Initialize()
         {
             _carCamera = _carCamera == null ? Camera.main : _carCamera;
             _cameraOffset = _carCamera.transform.position - transform.position;
-            transform.position = objeTransform.position;
-            transform.eulerAngles = objeTransform.eulerAngles;
             
             _carAnimationController = new CarAnimationController(transform);
             _carMovementController = GetComponent<CarMovementController>();
             _carMovementController.Initialize(_carAnimationController);
         }
 
+        public void SetCarPosition(Transform objeTransform)
+        {
+            transform.position = objeTransform.position;
+            transform.eulerAngles = objeTransform.eulerAngles;
+        }
+        
         private void LateUpdate()
         {
             _carCamera.transform.position = transform.position + _cameraOffset;

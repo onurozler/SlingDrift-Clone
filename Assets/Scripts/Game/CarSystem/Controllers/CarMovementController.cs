@@ -74,7 +74,7 @@ namespace Game.CarSystem.Controllers
                 if(Input.GetMouseButtonDown(1))
                     _carDirectionController.Handle(_slingManager.GetSlingByID(++index).GetFirstPosition());
                 
-                closestSling.ResetLine();
+               // closestSling.ResetLine();
                 //_carAnimationController.Play();
             }
 

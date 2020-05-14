@@ -12,14 +12,12 @@ namespace Game.Managers
     {
         private PlayerView _playerView;
         private LevelGenerator _levelGenerator;
-        private LevelManager _levelManager;
         private CarBase _carBase;
 
         [Inject]
         private void OnInstaller(PlayerView playerView,LevelManager levelManager, LevelGenerator levelGenerator, CarBase carBase)
         {
             _playerView = playerView;
-            _levelManager = levelManager;
             _levelGenerator = levelGenerator;
             _carBase = carBase;
         }
@@ -28,7 +26,8 @@ namespace Game.Managers
         {
             _levelGenerator.Initialize();
             _playerView.Initialize();
-            _carBase.Initialize(_levelManager.GetHighwayOfLevel(0,0).transform);
+            _carBase.Initialize();
+
         }
     }
 }

@@ -47,6 +47,18 @@ namespace Game.LevelSystem.Managers
             return _levelDatas?.FirstOrDefault(x => x.LevelIndex == levelIndex)?.AllLevelHighways[highwayIndex];
         }
 
+        public void DeleteWholeLevels()
+        {
+            if(_levelDatas.Count <= 0)
+                return;
+
+            for (int i = 0; i < _levelDatas.Count; i++)
+            {
+                _levelDatas[i].AllLevelHighways.ForEach(x=>x.Deactivate());
+                _levelDatas.Remove(_levelDatas[i]);
+            }
+        }
+
         private void DeleteLevel(int levelIndex)
         {
             var level = _levelDatas.FirstOrDefault(x => x.LevelIndex == levelIndex);

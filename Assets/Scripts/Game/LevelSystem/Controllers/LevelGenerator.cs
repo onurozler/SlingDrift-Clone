@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Config;
+using Game.CarSystem.Base;
 using Game.HighwaySystem.Base;
 using Game.HighwaySystem.HighwayTypes;
 using Game.LevelSystem.LevelEvents;
@@ -18,21 +19,26 @@ namespace Game.LevelSystem.Controllers
         private PoolManager _poolManager;
         private LevelManager _levelManager;
         private FinalHighway _finalHighway;
+        private CarBase _carBase;
 
         [Inject]
-        private void OnInstaller(PoolManager poolManager,LevelManager levelManager)
+        private void OnInstaller(PoolManager poolManager,LevelManager levelManager, CarBase carBase)
         {
+            _carBase = carBase;
             _poolManager = poolManager;
             _levelManager = levelManager;
-            _levelIndex = 0;
-            _finalHighway = null;
         }
 
         public void Initialize()
         {
-            GenerateLevels(3);
-            
-           // LevelEventBus.SubscribeEvent(LevelEventType.STARTED, () =>GenerateLevels(1));
+            LevelEventBus.SubscribeEvent(LevelEventType.STARTED, ()=>
+            {
+                _finalHighway = null;
+                _levelIndex = 0;
+                _levelManager.DeleteWholeLevels();
+                GenerateLevels(3);
+                _carBase.SetCarPosition(_levelManager.GetHighwayOfLevel(0,0).transform);
+            });
             LevelEventBus.SubscribeEvent(LevelEventType.LEVEL_UP, () =>
             {
                 Timer.Instance.TimerWait(5f, () => GenerateLevels(1));
