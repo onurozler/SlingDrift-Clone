@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="08e7c058-d85c-484c-ba55-bf07afb3f757" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SlingDrive/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SlingDrive/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SlingDrive/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SlingDrive/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/HighwayPrefabs/CornerHighway.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/HighwayPrefabs/CornerHighway.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/HighwayPrefabs/UCorner.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/HighwayPrefabs/UCorner.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Base/CarBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Base/CarBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarAnimationController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarAnimationController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarDirectionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarDirectionController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarMovementController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/Managers/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/Managers/LevelManager.cs" afterDir="false" />
-    </list>
+    <list default="true" id="08e7c058-d85c-484c-ba55-bf07afb3f757" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,8 +72,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/LevelSystem/Managers/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Base/CarBase.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarDirectionController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarSlingController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarMovementController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/CarSystem/Controllers/CarSlingController.cs" />
       </list>
     </option>
   </component>
@@ -153,7 +141,7 @@
       <workItem from="1589389702161" duration="5023000" />
       <workItem from="1589396339007" duration="1820000" />
       <workItem from="1589450211326" duration="6132000" />
-      <workItem from="1589461279152" duration="4063000" />
+      <workItem from="1589461279152" duration="4362000" />
     </task>
     <servers />
   </component>
