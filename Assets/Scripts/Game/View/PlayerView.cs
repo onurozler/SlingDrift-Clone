@@ -14,6 +14,8 @@ namespace Game.View
         [SerializeField]
         private Text _counterText;
 
+        private int _gamePlayCount = 0;
+        
         public void Initialize()
         {
             ButtonVisible(true);
@@ -21,6 +23,7 @@ namespace Game.View
             _counterText.enabled = false;
             
             _startButton.onClick.AddListener(() => LevelEventBus.InvokeEvent(LevelEventType.STARTED));
+            _startButton.onClick.AddListener(() => LevelEventBus.InvokeEvent(LevelEventType.STARTED , ++_gamePlayCount));
             
             LevelEventBus.SubscribeEvent(LevelEventType.STARTED, ()=>
             {

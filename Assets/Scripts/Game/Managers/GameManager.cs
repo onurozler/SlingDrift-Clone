@@ -1,6 +1,7 @@
 ﻿using Game.CarSystem;
 using Game.CarSystem.Base;
 using Game.LevelSystem.Controllers;
+using Game.LevelSystem.LevelEvents;
 using Game.LevelSystem.Managers;
 using Game.View;
 using UnityEngine;
@@ -28,6 +29,11 @@ namespace Game.Managers
             _playerView.Initialize();
             _carBase.Initialize();
 
+            
+            LevelEventBus.SubscribeEvent(LevelEventType.STARTED, (number) =>
+            {
+                Debug.Log("Gameplay Count : " + number);
+            } );
         }
     }
 }
